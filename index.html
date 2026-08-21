@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="JJG Development Group is an owner's representative for commercial, institutional, and residential construction. John Guido protects owners' budgets, schedules, and vision from the first drawing to the final walkthrough.">
+<meta property="og:title" content="JJG Development Group | Owner's Representative">
+<meta property="og:description" content="Someone on your side of the table. Nearly 30 years protecting owners' budgets, schedules, and vision on the region's biggest builds.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"JJG Development Group","description":"Owner's representative for commercial, institutional, and residential construction.","telephone":"+1-631-258-8787","email":"john@jjgdevelopmentgroup.com","founder":{"@type":"Person","name":"John Guido"},"areaServed":"Long Island and the New York region","url":"https://jjgdevelopmentgroup.com"}</script>
+<title>JJG Development Group</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+--navy:#13314E; --navy-deep:#0E2537; --navy-ink:#0A1A28;
+--gold:#C9A24C; --gold-soft:#E2C98A; --gold-dim:rgba(201,162,76,.35);
+--ink:#15181F; --bone:#F4F1EA; --bone-2:#ECE7DC; --hair:#CBC6BB;
+--mute:#8FA3B8; --mute-bone:#6B6F6B;
+--display:"Bodoni Moda",Didot,"Times New Roman",serif;
+--sans:"Manrope","Helvetica Neue",Arial,sans-serif;
+--mono:"IBM Plex Mono",Menlo,Consolas,monospace;
+--max:1200px; --gut:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy-ink);color:var(--bone);font-family:var(--sans);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:500;line-height:1.05;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+.lede{font-size:clamp(1.05rem,1.4vw,1.25rem);max-width:62ch;font-weight:300}
+section{position:relative}
+.band{padding:clamp(84px,11vw,150px) 0}
+.on-navy{background:var(--navy);color:var(--bone)}
+.on-deep{background:var(--navy-deep);color:var(--bone)}
+.on-bone{background:var(--bone);color:var(--ink)}
+.on-bone .eyebrow{color:#9C7A2E}
+.on-bone .eyebrow::before{background:#9C7A2E}
+.on-bone .lede{color:#3A3D3A}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 28px;font-family:var(--sans);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;transition:transform .25s ease,background .25s ease,color .25s ease,border-color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.btn-gold{background:var(--gold);color:var(--navy-ink)}
+.btn-gold:hover{background:var(--gold-soft)}
+.btn-ghost{border-color:rgba(244,241,234,.35);color:var(--bone)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn .arr{display:inline-block;transition:transform .25s}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* Scroll plumb line */
+.plumb{position:fixed;left:calc(var(--gut)/2 - 1px);top:0;bottom:0;width:2px;z-index:40;pointer-events:none;opacity:0;transition:opacity .6s}
+.plumb.on{opacity:1}
+.plumb-track{position:absolute;inset:0;background:rgba(201,162,76,.14)}
+.plumb-fill{position:absolute;left:0;top:0;width:100%;height:0;background:var(--gold);transition:height .08s linear}
+.plumb-ticks{position:absolute;inset:0}
+.plumb-ticks i{position:absolute;left:-3px;width:8px;height:1px;background:var(--gold);opacity:.55}
+.plumb-bob{position:absolute;left:-4px;top:0;width:10px;height:10px;background:var(--gold);transform:translateY(-50%) rotate(45deg);transition:top .08s linear}
+@media(max-width:900px){.plumb{display:none}}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:70;height:76px;display:flex;align-items:center;transition:background .35s,border-color .35s,height .35s;background:transparent;border-bottom:1px solid transparent}
+.nav.show{height:66px;background:rgba(10,26,40,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:rgba(201,162,76,.18)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:36px;width:100%}
+.nav .nav-links{margin-left:auto}
+.nav li a,.nav .nav-cta{white-space:nowrap}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav li a{text-decoration:none;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--bone);opacity:.8;padding:8px 0;position:relative}
+.nav li a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gold);transition:right .3s}
+.nav li a:hover,.nav li a.active{opacity:1;color:var(--gold)}
+.nav li a:hover::after,.nav li a.active::after{right:0}
+.burger{display:none}
+.nav .btn{padding:11px 18px;font-size:.72rem}
+@media(max-width:1060px){.nav ul{gap:18px}.nav li a{font-size:.66rem;letter-spacing:.1em}}
+@media(max-width:900px){
+.nav ul,.nav .nav-cta{display:none}
+.nav{height:64px;background:rgba(10,26,40,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:rgba(201,162,76,.18)}
+.nav.show{height:64px}
+.lg-h{height:24px}
+.burger{display:flex;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;padding:0 8px;background:none;border:1px solid rgba(201,162,76,.35);cursor:pointer}
+.burger span{display:block;height:1px;background:var(--bone);transition:transform .3s,opacity .3s,width .3s;width:100%;transform-origin:center}
+.burger span:nth-child(2){width:70%}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.burger:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+}
+/* Mobile menu */
+.mmenu{position:fixed;inset:0;z-index:65;background:var(--navy-ink);color:var(--bone);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;overflow-y:auto}
+.mmenu.open{opacity:1;visibility:visible}
+.mmenu-in{min-height:100%;padding:84px var(--gut) 28px;display:flex;flex-direction:column;gap:24px;background:radial-gradient(700px 400px at 100% 0%,#1A3F63,transparent 70%)}
+.mlinks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.mlinks li{border-bottom:1px solid rgba(201,162,76,.18);transform:translateY(14px);opacity:0;transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .5s}
+.mmenu.open .mlinks li{transform:none;opacity:1}
+.mmenu.open .mlinks li:nth-child(n){transition-delay:calc(var(--n,0)*45ms + 80ms)}
+.mlinks a{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0;text-decoration:none;color:var(--bone)}
+.mlinks a span{font-family:var(--display);font-size:1.45rem;font-weight:500;white-space:nowrap}
+.mlinks a small{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);text-align:right}
+.mlinks a:active span{color:var(--gold)}
+.mcontact{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mcontact .btn{justify-content:center;padding:15px 12px;font-size:.74rem}
+.mcontact .btn:first-child{grid-column:1 / -1}
+.mfoot{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#5E7389;line-height:1.8;margin-top:auto}
+body.menu-open{overflow:hidden}
+body.menu-open .mcta{transform:translateY(140%)}
+@media(min-width:901px){.mmenu{display:none}}
+
+/* Logo lockups (typographic stand-ins for the real files) */
+.logo-h{display:flex;align-items:center;text-decoration:none;color:var(--bone)}
+.lg-h{height:30px;width:auto;display:block}
+.logo-h .mark{font-family:var(--display);font-size:1.55rem;font-weight:600;letter-spacing:.02em;line-height:1;color:var(--bone)}
+.logo-h .mark b{color:var(--gold);font-weight:600}
+.logo-h .word{font-family:var(--sans);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--gold);border-left:1px solid var(--gold-dim);padding-left:14px;line-height:1.4}
+.logo-stack{display:inline-flex;text-decoration:none;color:var(--bone)}
+.lg-s{height:clamp(96px,10vw,124px);width:auto;display:block}
+.logo-stack .mark{font-family:var(--display);font-size:clamp(2.6rem,5vw,3.6rem);font-weight:600;letter-spacing:.06em;line-height:1}
+.logo-stack .mark b{color:var(--gold);font-weight:600}
+.logo-stack .rule{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.logo-stack .word{font-size:.66rem;letter-spacing:.42em;text-transform:uppercase;font-weight:600;color:var(--gold)}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:grid;align-items:center;background:radial-gradient(1200px 700px at 75% 40%,#1A3F63 0%,var(--navy) 40%,var(--navy-ink) 100%);isolation:isolate;z-index:2}
+#grid{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.9}
+.hero-bg{position:absolute;inset:0;overflow:hidden;z-index:0;background:inherit}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end;padding-top:96px;padding-bottom:0;min-height:100svh}
+.hero-copy{padding-bottom:clamp(60px,8vh,100px);display:flex;flex-direction:column;gap:24px;position:relative;z-index:2}
+.hero .logo-stack{align-self:flex-start;margin-bottom:10px}
+.hero h1{font-size:clamp(2.6rem,5.6vw,5.2rem);font-weight:600;line-height:.98;letter-spacing:-.015em;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--gold-soft)}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.hero h1 .ln>span{display:block;transform:translateY(110%);animation:lineUp 1s cubic-bezier(.2,.7,.1,1) forwards}
+.hero h1 .ln:nth-child(1)>span{animation-delay:.45s}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.58s}
+.hero h1 .ln:nth-child(3)>span{animation-delay:.71s}
+.hero h1 .ln.sub{margin-top:.55em}
+.hero h1 .ln.sub>span{font-family:var(--sans);font-weight:400;font-size:clamp(1rem,1.35vw,1.25rem);letter-spacing:.02em;line-height:1.4;color:var(--gold-soft);animation-delay:.95s;text-shadow:none}
+@keyframes lineUp{to{transform:none}}
+.hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(10,26,40,.88) 0%,rgba(10,26,40,.55) 38%,rgba(10,26,40,0) 62%),linear-gradient(180deg,rgba(10,26,40,.5),transparent 30%,transparent 75%,rgba(10,26,40,.55))}
+.hero .lede{color:#DCE4EC;font-size:clamp(1.05rem,1.3vw,1.2rem);max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+.proof{display:flex;align-items:center;gap:18px;padding:14px 0;border-top:1px solid rgba(201,162,76,.25);border-bottom:1px solid rgba(201,162,76,.25);max-width:560px}
+.proof .pv{font-family:var(--mono);font-size:1.5rem;color:var(--gold);font-weight:500;letter-spacing:-.02em;white-space:nowrap}
+.proof .pl{font-size:.82rem;color:#C7D3DF;line-height:1.4;max-width:34ch}
+.hero-fig{position:relative;align-self:end;height:100%;display:flex;align-items:flex-end;justify-content:center}
+.hero-fig img{display:block;width:min(100%,540px);height:auto;position:relative;z-index:2;filter:drop-shadow(0 30px 60px rgba(0,0,0,.45));margin-bottom:-56px;animation:figUp 1.4s .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes figUp{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+.hero-fig .arc{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:150%;aspect-ratio:1;border-radius:50%;border:1px solid var(--gold-dim);z-index:1;animation:arcIn 1.6s .6s cubic-bezier(.2,.7,.2,1) both}
+.hero-fig .arc.two{width:118%;border-color:rgba(201,162,76,.22);border-style:dashed;animation:arcIn 1.6s .8s cubic-bezier(.2,.7,.2,1) both,spin 90s linear infinite}
+.hero-fig .arc.three{width:134%;border:0;background:conic-gradient(from 0deg,transparent 0 70%,rgba(201,162,76,.35) 86%,transparent 100%);-webkit-mask:radial-gradient(circle,transparent calc(50% - 1.5px),#000 calc(50% - 1px),#000 50%,transparent calc(50% + 1px));mask:radial-gradient(circle,transparent calc(50% - 1.5px),#000 calc(50% - 1px),#000 50%,transparent calc(50% + 1px));animation:spin 26s linear infinite}
+@keyframes arcIn{from{opacity:0;transform:translateX(-50%) scale(.8)}to{opacity:1;transform:translateX(-50%) scale(1)}}
+@keyframes spin{to{transform:translateX(-50%) rotate(360deg)}}
+.hero-fig{will-change:transform}
+.hero-fig .arc.fill{width:96%;border:0;background:radial-gradient(circle at 50% 35%,rgba(201,162,76,.22),rgba(201,162,76,0) 62%)}
+.hero-fig .tag{position:absolute;z-index:3;right:0;bottom:22%;background:var(--navy-ink);border:1px solid var(--gold-dim);padding:12px 16px;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;line-height:1.5;color:var(--bone)}
+.hero-fig .tag span{color:var(--gold);display:block;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:4px}
+.scroll-cue{position:absolute;left:var(--gut);bottom:22px;z-index:3;font-family:var(--mono);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);display:flex;align-items:center;gap:12px}
+.scroll-cue i{display:block;width:1px;height:44px;background:linear-gradient(var(--gold),transparent);animation:drop 1.8s ease-in-out infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media(max-width:900px){
+.hero-fig img{margin-bottom:0}
+.hero .wrap{grid-template-columns:1fr;padding-top:90px;gap:0;min-height:auto}
+.hero-copy{padding-bottom:30px}
+.hero-fig img{width:min(80vw,380px)}
+.hero-fig .tag{right:auto;left:0;bottom:12%}
+.scroll-cue{display:none}
+}
+
+
+/* Mobile hero: photo as a cinematic backdrop, headline over it */
+@media(max-width:900px){
+.hero{min-height:100svh;display:block}
+.hero .wrap{display:block;position:relative;padding-top:0;min-height:100svh}
+.hero-fig{position:absolute;top:0;right:-14vw;left:auto;width:90vw;max-width:470px;height:auto;z-index:0;display:block;pointer-events:none}
+.hero-fig img{width:100%;margin:0;-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 96%);mask-image:linear-gradient(180deg,#000 55%,transparent 96%);filter:none;animation:figUp 1.2s .2s cubic-bezier(.2,.7,.2,1) both}
+.hero-fig .arc,.hero-fig .tag{display:none}
+.hero-fig .arc.fill{display:block;bottom:auto;top:-10%;width:120%}
+.hero-copy{position:relative;z-index:2;padding-top:min(92vw,470px);padding-bottom:36px;gap:18px}
+.hero-copy::before{content:"";position:absolute;left:calc(-1*var(--gut));right:calc(-1*var(--gut));top:min(58vw,300px);bottom:0;z-index:-1;background:linear-gradient(180deg,rgba(10,26,40,0) 0%,rgba(10,26,40,.85) 26%,rgba(10,26,40,.96) 100%)}
+.hero .logo-stack{position:absolute;top:84px;left:0;margin:0}
+.lg-s{height:68px}
+.hero h1{font-size:clamp(2.7rem,12.5vw,3.6rem);line-height:.96;font-weight:600;letter-spacing:-.02em}
+.hero h1 .ln.sub>span{font-size:1rem;margin-top:0}
+.hero h1 .ln.sub{margin-top:.4em}
+.hero .lede{font-size:1rem;max-width:36ch}
+.proof{gap:14px;padding:12px 0}
+.proof .pv{font-size:1.3rem}
+.proof .pl{font-size:.78rem}
+.hero-cta .btn{flex:1 1 100%;justify-content:center}
+.hero-scrim{background:linear-gradient(180deg,rgba(10,26,40,.55),transparent 22%)}
+.scroll-cue{display:none}
+}
+
+/* Stats */
+.stats{background:var(--bone);color:var(--ink);border-top:1px solid var(--gold);position:relative;z-index:1}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:66px 26px 34px;border-right:1px solid var(--hair)}
+.stat:first-child{padding-left:0}
+.stat:last-child{border-right:0}
+.stat .num{white-space:nowrap;font-family:var(--mono);font-size:clamp(1.7rem,2.6vw,2.4rem);font-weight:500;color:var(--navy);letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.stat .num small{font-size:.55em;color:#9C7A2E;margin-left:2px}
+.stat .lab{margin-top:12px;font-size:.82rem;color:var(--mute-bone);max-width:22ch;line-height:1.4}
+@media(max-width:900px){.stats .wrap{grid-template-columns:1fr 1fr}.stat{padding:28px 18px}.hero-fig img{margin-bottom:0}.stat:first-child{padding-left:18px}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--hair)}}
+
+/* Definition + diagram */
+.def .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);align-items:center}
+.def h2{font-size:clamp(2rem,3.6vw,3.2rem);margin:22px 0 26px}
+.diagram{width:100%;height:auto;display:block}
+.diagram text{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;fill:#C7D3DF}
+.diagram .you{fill:var(--gold)}
+.diagram .hub{fill:var(--navy-ink);stroke:var(--gold);stroke-width:1}
+.diagram .node{fill:none;stroke:rgba(244,241,234,.35);stroke-width:1}
+.diagram .link{stroke:rgba(244,241,234,.22);stroke-width:1;stroke-dasharray:3 5}
+.diagram .link-g{stroke:var(--gold);stroke-width:1.2;stroke-dasharray:300;stroke-dashoffset:300}
+.in-view .diagram .link-g{animation:draw 1.4s .3s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media(max-width:900px){.def .wrap{grid-template-columns:1fr}}
+
+/* Q&A */
+.qa h2{font-size:clamp(1.9rem,3.2vw,2.8rem);margin:22px 0 44px;max-width:18ch}
+.qa-list{display:flex;flex-direction:column;border-top:1px solid var(--hair)}
+.qa-item{border-bottom:1px solid var(--hair)}
+.qa-item summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr 40px;align-items:center;gap:20px;padding:26px 0}
+.qa-item summary::-webkit-details-marker{display:none}
+.qa-item h3{font-family:var(--display);font-size:clamp(1.25rem,2vw,1.7rem);font-weight:500;color:var(--navy)}
+.qa-item .plus{width:40px;height:40px;border:1px solid var(--hair);display:grid;place-items:center;position:relative;transition:transform .35s,border-color .3s}
+.qa-item .plus::before,.qa-item .plus::after{content:"";position:absolute;background:#9C7A2E;width:14px;height:1px}
+.qa-item .plus::after{transform:rotate(90deg)}
+.qa-item[open] .plus{transform:rotate(45deg);border-color:#9C7A2E}
+.qa-item p{max-width:68ch;padding:0 0 28px;color:#3A3D3A;font-size:1.05rem}
+.qa-item summary:focus-visible{outline:2px solid #9C7A2E;outline-offset:4px}
+
+/* Services */
+.svc h2{font-size:clamp(2rem,3.6vw,3.2rem);margin:22px 0 20px}
+.svc-head{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:56px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,162,76,.22);border:1px solid rgba(201,162,76,.22)}
+.svc-cell{background:var(--navy);padding:34px 30px 38px;display:flex;flex-direction:column;gap:16px;min-height:190px;transition:background .3s}
+.svc-cell:hover{background:#173A5B}
+.svc-cell .ico{width:36px;height:36px}
+.svc-cell .ico path,.svc-cell .ico circle,.svc-cell .ico rect,.svc-cell .ico line{fill:none;stroke:var(--gold);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}
+.svc-cell p{font-size:1rem;color:#DCE4EC;line-height:1.5}
+@media(max-width:900px){.svc-head{grid-template-columns:1fr}.svc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.svc-grid{grid-template-columns:1fr}}
+
+/* How it works */
+.how h2{font-size:clamp(2rem,3.6vw,3.2rem);margin:22px 0 18px}
+.how .lede{margin-bottom:56px}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:5px;height:1px;background:linear-gradient(90deg,var(--gold),rgba(201,162,76,.15))}
+.step{padding:32px 28px 0 0;position:relative;display:flex;flex-direction:column;gap:14px}
+.step::before{content:"";position:absolute;top:0;left:0;width:11px;height:11px;background:var(--navy-deep);border:1px solid var(--gold);transform:rotate(45deg)}
+.step .ph{font-family:var(--mono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.step h3{font-family:var(--display);font-size:1.45rem;font-weight:500;color:var(--bone)}
+.step p{font-size:.95rem;color:#C7D3DF;max-width:34ch}
+@media(max-width:900px){.steps{grid-template-columns:1fr;gap:34px}.steps::before{width:1px;height:100%;top:0;left:5px;background:linear-gradient(var(--gold),rgba(201,162,76,.15))}.step{padding:0 0 0 34px}.step::before{top:4px}}
+
+/* Track record */
+.track h2{font-size:clamp(2rem,3.6vw,3.2rem);margin:22px 0 18px}
+.track .lede{margin-bottom:48px}
+.sched{width:100%;border-collapse:collapse;font-size:.95rem}
+.sched th{font-family:var(--mono);font-weight:500;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:#9C7A2E;text-align:left;padding:0 14px 14px 0;border-bottom:1px solid var(--navy)}
+.sched td{padding:16px 14px 16px 0;border-bottom:1px solid var(--hair);vertical-align:middle;color:var(--ink)}
+.sched td.name{font-family:var(--display);font-size:1.15rem;font-weight:500;color:var(--navy);width:38%}
+.sched td.scope{color:var(--mute-bone);font-size:.9rem}
+.sched td.val{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;color:var(--navy);font-weight:500;width:90px}
+.sched td.bar{width:26%}
+.sched .b{height:6px;background:var(--bone-2);position:relative;overflow:hidden}
+.sched .b i{position:absolute;inset:0;width:var(--w);background:linear-gradient(90deg,var(--navy),#9C7A2E);transform:scaleX(0);transform-origin:left;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.in-view .sched .b i{transform:scaleX(1)}
+.sched tr:nth-child(n+2) .b i{transition-delay:calc(var(--i)*70ms)}
+.sched-wrap{overflow-x:auto;min-width:0}
+.sched-layout{display:grid;grid-template-columns:1fr 240px;gap:48px;align-items:start}
+.sched-focus{position:sticky;top:120px;display:flex;flex-direction:column;gap:8px;padding:26px 0 26px 26px;border-left:1px solid var(--gold)}
+.sf-lab{font-family:var(--mono);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:#9C7A2E}
+.sf-val{font-family:var(--mono);font-size:clamp(2.6rem,4vw,3.6rem);line-height:1;color:var(--navy);font-weight:500;letter-spacing:-.03em;font-variant-numeric:tabular-nums;transition:opacity .25s}
+.sf-val.swap{opacity:0}
+.sf-name{font-family:var(--display);font-size:1.2rem;color:var(--navy);line-height:1.2;margin-top:6px}
+.sf-scope{font-size:.82rem;color:var(--mute-bone)}
+.sched tbody tr{transition:opacity .3s,background .3s;cursor:default}
+.sched tbody.hot tr{opacity:.32}
+.sched tbody.hot tr.on{opacity:1;background:linear-gradient(90deg,rgba(201,162,76,.10),transparent)}
+.sched tbody tr.on td.name{color:#9C7A2E}
+@media(max-width:1000px){.sched-layout{grid-template-columns:1fr}.sched-focus{display:none}}
+.sched-foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:22px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--mute-bone)}
+.sched-foot b{color:var(--navy);font-weight:500}
+@media(max-width:900px){.sched td.bar,.sched th.bar{display:none}.sched td.name{width:auto;font-size:1.02rem}}
+
+/* Client marquee */
+.clients{background:var(--bone);border-top:1px solid var(--hair);padding:26px 0;overflow:hidden}
+.clients .lab{text-align:center;font-family:var(--mono);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mute-bone);margin-bottom:18px}
+.marquee{display:flex;gap:0;width:max-content;animation:slide 42s linear infinite}
+.marquee:hover{animation-play-state:paused}
+.marquee .ci{font-family:var(--display);font-size:1.5rem;font-weight:500;color:var(--navy);padding:0 34px;white-space:nowrap;display:flex;align-items:center;gap:14px;opacity:.85;position:relative}
+.marquee .ci::after{content:"";width:5px;height:5px;background:var(--gold);transform:rotate(45deg);margin-left:34px}
+.marquee .bm{width:30px;height:30px;fill:var(--navy);flex:none}
+.marquee .bm.wide{width:54px}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.marquee .ci{padding:6px 18px}}
+
+/* Benefits */
+.why .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,100px);align-items:start}
+.why .wrap>.rv:first-child{position:sticky;top:110px}
+.why h2{font-size:clamp(2rem,3.6vw,3.2rem);margin:22px 0 0}
+.why-list{display:flex;flex-direction:column}
+.why-item{display:grid;grid-template-columns:160px 1fr;gap:30px;padding:30px 0;border-top:1px solid rgba(201,162,76,.25)}
+.why-item:last-child{border-bottom:1px solid rgba(201,162,76,.25)}
+.why-item h3{font-family:var(--display);font-size:1.55rem;color:var(--gold-soft);font-weight:500}
+.why-item p{color:#DCE4EC;font-size:1.02rem;max-width:56ch}
+@media(max-width:900px){.why .wrap{grid-template-columns:1fr}.why .wrap>.rv:first-child{position:static;margin-bottom:20px}.why-item{grid-template-columns:1fr;gap:8px}}
+
+/* Who we serve */
+.serve{display:grid;grid-template-columns:1fr 1fr;min-height:70vh}
+.serve-panel{padding:clamp(60px,8vw,110px) var(--gut);display:flex;flex-direction:column;justify-content:flex-end;gap:18px;position:relative;overflow:hidden;isolation:isolate}
+.serve-panel canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.serve-panel>*:not(canvas):not(.serve-big){position:relative;z-index:1}
+.serve-panel h3{font-family:var(--display);font-size:clamp(2rem,3.4vw,3rem);font-weight:500;max-width:14ch}
+.serve-panel .kicker{font-family:var(--mono);font-size:.68rem;letter-spacing:.26em;text-transform:uppercase}
+.serve-panel p{max-width:52ch;font-size:1.02rem}
+.serve-c{background:var(--navy-deep);color:var(--bone)}
+.serve-c .kicker{color:var(--gold)}
+.serve-c p{color:#DCE4EC}
+.serve-r{background:var(--bone);color:var(--ink)}
+.serve-r .kicker{color:#9C7A2E}
+.serve-r h3{color:var(--navy)}
+.serve-r p{color:#3A3D3A}
+.serve-big{font-family:var(--display);font-size:clamp(5rem,13vw,11rem);line-height:.8;font-weight:400;opacity:.06;position:absolute;right:.1em;bottom:-.05em;z-index:0;pointer-events:none;letter-spacing:-.03em}
+@media(max-width:900px){.serve{grid-template-columns:1fr}.serve-panel{min-height:60vh}}
+
+/* When to engage */
+.when .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(40px,6vw,100px);align-items:center}
+.when h2{font-size:clamp(2rem,3.6vw,3.2rem);margin:22px 0 22px}
+.curve{width:100%;height:auto;display:block}
+.curve text{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;fill:var(--mute)}
+.curve .lbl{fill:var(--gold)}
+.curve .axis{stroke:rgba(244,241,234,.25);stroke-width:1}
+.curve .line-c{fill:none;stroke:var(--gold);stroke-width:1.6;stroke-dasharray:700;stroke-dashoffset:700}
+.curve .line-i{fill:none;stroke:#C7D3DF;stroke-width:1.2;stroke-dasharray:700;stroke-dashoffset:700;opacity:.8}
+.in-view .curve .line-c{animation:draw2 1.6s .2s ease forwards}
+.in-view .curve .line-i{animation:draw2 1.6s .5s ease forwards}
+@keyframes draw2{to{stroke-dashoffset:0}}
+.curve .zone{fill:rgba(201,162,76,.08)}
+@media(max-width:900px){.when .wrap{grid-template-columns:1fr}}
+
+/* CTA */
+.cta{background:radial-gradient(900px 500px at 50% 100%,#1A3F63,var(--navy-ink) 70%);text-align:center;overflow:hidden}
+.cta .wrap{display:flex;flex-direction:column;align-items:center;gap:26px}
+.cta h2{font-size:clamp(2.4rem,5vw,4.4rem);font-weight:400}
+.cta h2 em{font-style:italic;color:var(--gold-soft)}
+.cta .lede{text-align:center;color:#C7D3DF}
+.cta .eyebrow{justify-content:center}
+.cta .eyebrow::before{display:none}
+.cta .contact{display:flex;gap:34px;flex-wrap:wrap;justify-content:center;font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;margin-top:20px}
+.cta .contact a{text-decoration:none;color:var(--bone);border-bottom:1px solid var(--gold-dim);padding-bottom:3px}
+.cta .contact a:hover{color:var(--gold)}
+
+/* Contact form */
+.cta{text-align:left}
+.cta-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,90px);align-items:start}
+.cta .wrap.cta-grid{display:grid;align-items:start}
+.cta-copy{display:flex;flex-direction:column;gap:22px;position:sticky;top:110px}
+.cta .lede{text-align:left}
+.cta .eyebrow{justify-content:flex-start}
+.cta .eyebrow::before{display:inline-block}
+.cta .contact{justify-content:flex-start;margin-top:4px;flex-direction:column;gap:12px;align-items:flex-start}
+.cform{background:rgba(19,49,78,.55);border:1px solid rgba(201,162,76,.25);padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:18px;backdrop-filter:blur(8px);position:relative}
+.cform::before{content:"";position:absolute;top:-1px;left:-1px;width:28px;height:28px;border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
+.cform::after{content:"";position:absolute;bottom:-1px;right:-1px;width:28px;height:28px;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fld{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;border:0;min-width:0}
+.fld>span,.fld legend{font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.fld input,.fld select,.fld textarea{width:100%;background:rgba(10,26,40,.6);border:1px solid rgba(244,241,234,.18);color:var(--bone);font-family:var(--sans);font-size:1rem;padding:13px 14px;border-radius:0;outline:none;transition:border-color .25s,box-shadow .25s;-webkit-appearance:none;appearance:none}
+.fld select{background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+.fld select option{color:var(--ink);background:var(--bone)}
+.fld textarea{resize:vertical;min-height:110px}
+.fld input::placeholder,.fld textarea::placeholder{color:rgba(244,241,234,.35)}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,76,.18)}
+.fld input.bad{border-color:#D47B6A}
+.seg{display:flex;flex-direction:column}
+.seg legend{margin-bottom:8px;padding:0}
+.seg label{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:.95rem;color:#DCE4EC}
+.seg{flex-direction:row;flex-wrap:wrap;gap:10px 26px}
+.seg legend+label{margin-left:0}
+.seg input{position:absolute;opacity:0;width:0;height:0}
+.seg label span{position:relative;padding-left:26px}
+.seg label span::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%) rotate(45deg);width:12px;height:12px;border:1px solid var(--gold);transition:background .2s}
+.seg input:checked+span::before{background:var(--gold)}
+.seg input:focus-visible+span::before{box-shadow:0 0 0 3px rgba(201,162,76,.25)}
+.fact{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:6px}
+.fnote{font-size:.82rem;color:var(--mute);max-width:28ch;line-height:1.4}
+.ferr{font-size:.85rem;color:#E9A596}
+.fdone{position:absolute;inset:0;background:var(--navy-deep);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:14px;padding:clamp(24px,3vw,40px);animation:up .6s ease both}
+.fdone[hidden]{display:none}
+.fd-mark{width:44px;height:44px;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;font-size:1.2rem}
+.fdone h3{font-family:var(--display);font-size:1.7rem;font-weight:500}
+.fdone p{color:#C7D3DF}
+.fdone a{color:var(--gold)}
+@media(max-width:900px){.cta-grid{grid-template-columns:1fr}.cta-copy{position:static}.f2{grid-template-columns:1fr}}
+
+/* Footer */
+footer{background:var(--navy-ink);border-top:1px solid rgba(201,162,76,.18);padding:50px 0 40px;position:relative;overflow:hidden}
+footer .wrap{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;position:relative;z-index:1}
+footer .addr{font-size:.85rem;color:var(--mute);line-height:1.8}
+footer .addr b{display:block;color:var(--bone);font-weight:600;font-size:.92rem}
+footer .fine{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#5E7389;text-align:right}
+footer .wm{position:absolute;right:-40px;bottom:-90px;width:420px;color:rgba(201,162,76,.07);pointer-events:none;z-index:0}
+footer .wm svg{width:100%;height:auto;display:block}
+@media(max-width:700px){footer .wrap{grid-template-columns:1fr}footer .fine{text-align:left}}
+
+/* Mobile sticky CTA */
+.mcta{display:none}
+@media(max-width:900px){
+.mcta{display:flex;justify-content:center;align-items:center;gap:10px;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;padding:16px;background:var(--gold);color:var(--navy-ink);text-decoration:none;font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 14px 40px rgba(0,0,0,.4);transform:translateY(140%);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.mcta.show{transform:none}
+footer{padding-bottom:110px}
+}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in-view{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+.hero .rv{opacity:0;transform:translateY(16px);animation:up 1s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .rv.a1{animation-delay:.15s}.hero .rv.a2{animation-delay:.35s}.hero .rv.a4{animation-delay:1.15s}.hero .rv.a5{animation-delay:.4s}
+@keyframes up{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+.rv,.hero .rv{opacity:1;transform:none;animation:none;transition:none}
+.hero h1 .ln>span,.hero-fig img,.hero-fig .arc{animation:none;transform:none;opacity:1}
+.hero-fig .arc{transform:translateX(-50%)}
+.scroll-cue i{animation:none}
+.sched .b i{transform:scaleX(1)}
+.diagram .link-g,.curve .line-c,.curve .line-i{stroke-dashoffset:0;animation:none}
+}
+</style>
+</head>
+<body>
+
+
+<!-- SCROLL PLUMB LINE -->
+<div class="plumb" id="plumb" aria-hidden="true"><div class="plumb-track"><div class="plumb-fill" id="plumbFill"></div></div><div class="plumb-ticks" id="plumbTicks"></div><div class="plumb-bob" id="plumbBob"></div></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav" aria-label="Primary">
+<div class="wrap">
+<a class="logo-h" href="#top" aria-label="JJG Development Group home"><svg class="lg-h" role="img" aria-label="JJG Development Group" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="47.94 34.25 502.20 98.24"><defs><g><g id="glyph-0-0"><path d="M 10.6875 -2.28125 C 12.0625 -2.28125 13.3125 -2.5 14.4375 -2.9375 C 15.5625 -3.375 16.515625 -3.976562 17.296875 -4.75 C 18.078125 -5.519531 18.679688 -6.429688 19.109375 -7.484375 C 19.535156 -8.535156 19.75 -9.664062 19.75 -10.875 L 19.75 -10.9375 C 19.75 -12.144531 19.535156 -13.273438 19.109375 -14.328125 C 18.679688 -15.378906 18.078125 -16.296875 17.296875 -17.078125 C 16.515625 -17.859375 15.5625 -18.472656 14.4375 -18.921875 C 13.3125 -19.367188 12.0625 -19.59375 10.6875 -19.59375 L 5.5625 -19.59375 L 5.5625 -2.28125 Z M 3.09375 -21.875 L 10.6875 -21.875 C 12.394531 -21.875 13.960938 -21.597656 15.390625 -21.046875 C 16.816406 -20.492188 18.046875 -19.726562 19.078125 -18.75 C 20.109375 -17.769531 20.90625 -16.617188 21.46875 -15.296875 C 22.03125 -13.972656 22.3125 -12.539062 22.3125 -11 L 22.3125 -10.9375 C 22.3125 -9.394531 22.03125 -7.957031 21.46875 -6.625 C 20.90625 -5.289062 20.109375 -4.132812 19.078125 -3.15625 C 18.046875 -2.175781 16.816406 -1.40625 15.390625 -0.84375 C 13.960938 -0.28125 12.394531 0 10.6875 0 L 3.09375 0 Z M 3.09375 -21.875 "/></g><g id="glyph-0-1"><path d="M 3.09375 -21.875 L 18.90625 -21.875 L 18.90625 -19.625 L 5.5625 -19.625 L 5.5625 -12.15625 L 17.5 -12.15625 L 17.5 -9.90625 L 5.5625 -9.90625 L 5.5625 -2.25 L 19.0625 -2.25 L 19.0625 0 L 3.09375 0 Z M 3.09375 -21.875 "/></g><g id="glyph-0-2"><path d="M 1.21875 -21.875 L 3.96875 -21.875 L 11.75 -3.03125 L 19.5625 -21.875 L 22.21875 -21.875 L 12.8125 0.15625 L 10.625 0.15625 Z M 1.21875 -21.875 "/></g><g id="glyph-0-3"><path d="M 3.09375 -21.875 L 5.5625 -21.875 L 5.5625 -2.28125 L 17.875 -2.28125 L 17.875 0 L 3.09375 0 Z M 3.09375 -21.875 "/></g><g id="glyph-0-4"><path d="M 13.3125 -1.90625 C 14.5625 -1.90625 15.710938 -2.140625 16.765625 -2.609375 C 17.816406 -3.078125 18.71875 -3.71875 19.46875 -4.53125 C 20.21875 -5.34375 20.804688 -6.289062 21.234375 -7.375 C 21.660156 -8.457031 21.875 -9.625 21.875 -10.875 L 21.875 -10.9375 C 21.875 -12.1875 21.660156 -13.359375 21.234375 -14.453125 C 20.804688 -15.546875 20.207031 -16.5 19.4375 -17.3125 C 18.664062 -18.125 17.753906 -18.769531 16.703125 -19.25 C 15.648438 -19.726562 14.5 -19.96875 13.25 -19.96875 C 12 -19.96875 10.847656 -19.734375 9.796875 -19.265625 C 8.742188 -18.796875 7.84375 -18.15625 7.09375 -17.34375 C 6.34375 -16.53125 5.753906 -15.582031 5.328125 -14.5 C 4.898438 -13.414062 4.6875 -12.25 4.6875 -11 L 4.6875 -10.9375 C 4.6875 -9.6875 4.898438 -8.515625 5.328125 -7.421875 C 5.753906 -6.328125 6.351562 -5.375 7.125 -4.5625 C 7.894531 -3.75 8.804688 -3.101562 9.859375 -2.625 C 10.910156 -2.144531 12.0625 -1.90625 13.3125 -1.90625 Z M 13.25 0.375 C 11.582031 0.375 10.066406 0.0703125 8.703125 -0.53125 C 7.335938 -1.132812 6.164062 -1.953125 5.1875 -2.984375 C 4.207031 -4.015625 3.453125 -5.210938 2.921875 -6.578125 C 2.390625 -7.941406 2.125 -9.375 2.125 -10.875 L 2.125 -10.9375 C 2.125 -12.4375 2.394531 -13.875 2.9375 -15.25 C 3.476562 -16.625 4.238281 -17.828125 5.21875 -18.859375 C 6.195312 -19.890625 7.375 -20.710938 8.75 -21.328125 C 10.125 -21.941406 11.644531 -22.25 13.3125 -22.25 C 14.976562 -22.25 16.492188 -21.945312 17.859375 -21.34375 C 19.222656 -20.738281 20.394531 -19.921875 21.375 -18.890625 C 22.351562 -17.859375 23.109375 -16.660156 23.640625 -15.296875 C 24.171875 -13.929688 24.4375 -12.5 24.4375 -11 C 24.457031 -10.976562 24.457031 -10.957031 24.4375 -10.9375 C 24.4375 -9.4375 24.164062 -8 23.625 -6.625 C 23.082031 -5.25 22.320312 -4.046875 21.34375 -3.015625 C 20.363281 -1.984375 19.1875 -1.160156 17.8125 -0.546875 C 16.4375 0.0664062 14.914062 0.375 13.25 0.375 Z M 13.25 0.375 "/></g><g id="glyph-0-5"><path d="M 10.96875 -9.96875 C 11.863281 -9.96875 12.679688 -10.082031 13.421875 -10.3125 C 14.160156 -10.539062 14.796875 -10.867188 15.328125 -11.296875 C 15.859375 -11.722656 16.265625 -12.226562 16.546875 -12.8125 C 16.828125 -13.394531 16.96875 -14.050781 16.96875 -14.78125 L 16.96875 -14.84375 C 16.96875 -16.40625 16.429688 -17.585938 15.359375 -18.390625 C 14.285156 -19.191406 12.863281 -19.59375 11.09375 -19.59375 L 5.5625 -19.59375 L 5.5625 -9.96875 Z M 3.09375 -21.875 L 11.28125 -21.875 C 12.507812 -21.875 13.628906 -21.710938 14.640625 -21.390625 C 15.648438 -21.066406 16.515625 -20.609375 17.234375 -20.015625 C 17.953125 -19.421875 18.503906 -18.695312 18.890625 -17.84375 C 19.273438 -16.988281 19.46875 -16.019531 19.46875 -14.9375 L 19.46875 -14.875 C 19.46875 -13.6875 19.238281 -12.648438 18.78125 -11.765625 C 18.320312 -10.878906 17.703125 -10.132812 16.921875 -9.53125 C 16.140625 -8.925781 15.226562 -8.472656 14.1875 -8.171875 C 13.144531 -7.867188 12.039062 -7.71875 10.875 -7.71875 L 5.5625 -7.71875 L 5.5625 0 L 3.09375 0 Z M 3.09375 -21.875 "/></g><g id="glyph-0-6"><path d="M 3.09375 -21.875 L 5.59375 -21.875 L 13.5625 -9.9375 L 21.53125 -21.875 L 24.03125 -21.875 L 24.03125 0 L 21.5625 0 L 21.5625 -17.71875 L 13.59375 -6 L 13.46875 -6 L 5.5 -17.6875 L 5.5 0 L 3.09375 0 Z M 3.09375 -21.875 "/></g><g id="glyph-0-7"><path d="M 3.09375 -21.875 L 5.40625 -21.875 L 19.1875 -4.34375 L 19.1875 -21.875 L 21.59375 -21.875 L 21.59375 0 L 19.625 0 L 5.5 -17.9375 L 5.5 0 L 3.09375 0 Z M 3.09375 -21.875 "/></g><g id="glyph-0-8"><path d="M 8.875 -19.59375 L 1.53125 -19.59375 L 1.53125 -21.875 L 18.71875 -21.875 L 18.71875 -19.59375 L 11.375 -19.59375 L 11.375 0 L 8.875 0 Z M 8.875 -19.59375 "/></g><g id="glyph-0-9"></g><g id="glyph-0-10"><path d="M 13.25 0.375 C 11.519531 0.375 9.972656 0.0820312 8.609375 -0.5 C 7.242188 -1.082031 6.078125 -1.882812 5.109375 -2.90625 C 4.140625 -3.925781 3.398438 -5.117188 2.890625 -6.484375 C 2.378906 -7.847656 2.125 -9.3125 2.125 -10.875 L 2.125 -10.9375 C 2.125 -12.4375 2.390625 -13.867188 2.921875 -15.234375 C 3.453125 -16.597656 4.195312 -17.800781 5.15625 -18.84375 C 6.113281 -19.882812 7.265625 -20.710938 8.609375 -21.328125 C 9.953125 -21.941406 11.445312 -22.25 13.09375 -22.25 C 14.007812 -22.25 14.847656 -22.1875 15.609375 -22.0625 C 16.367188 -21.9375 17.078125 -21.75 17.734375 -21.5 C 18.390625 -21.25 19.003906 -20.941406 19.578125 -20.578125 C 20.148438 -20.210938 20.707031 -19.800781 21.25 -19.34375 L 19.65625 -17.46875 C 19.238281 -17.84375 18.800781 -18.179688 18.34375 -18.484375 C 17.882812 -18.785156 17.390625 -19.046875 16.859375 -19.265625 C 16.328125 -19.484375 15.742188 -19.65625 15.109375 -19.78125 C 14.472656 -19.90625 13.769531 -19.96875 13 -19.96875 C 11.789062 -19.96875 10.675781 -19.726562 9.65625 -19.25 C 8.632812 -18.769531 7.757812 -18.125 7.03125 -17.3125 C 6.300781 -16.5 5.726562 -15.546875 5.3125 -14.453125 C 4.894531 -13.359375 4.6875 -12.207031 4.6875 -11 L 4.6875 -10.9375 C 4.6875 -9.625 4.890625 -8.414062 5.296875 -7.3125 C 5.703125 -6.207031 6.28125 -5.25 7.03125 -4.4375 C 7.78125 -3.625 8.6875 -2.988281 9.75 -2.53125 C 10.8125 -2.070312 12.007812 -1.84375 13.34375 -1.84375 C 14.59375 -1.84375 15.769531 -2.054688 16.875 -2.484375 C 17.976562 -2.910156 18.90625 -3.425781 19.65625 -4.03125 L 19.65625 -9.46875 L 13 -9.46875 L 13 -11.6875 L 22.03125 -11.6875 L 22.03125 -2.96875 C 21.007812 -2.050781 19.753906 -1.265625 18.265625 -0.609375 C 16.773438 0.046875 15.101562 0.375 13.25 0.375 Z M 13.25 0.375 "/></g><g id="glyph-0-11"><path d="M 12.28125 -10.71875 C 13.09375 -10.71875 13.84375 -10.820312 14.53125 -11.03125 C 15.21875 -11.238281 15.8125 -11.535156 16.3125 -11.921875 C 16.8125 -12.304688 17.203125 -12.773438 17.484375 -13.328125 C 17.765625 -13.878906 17.90625 -14.507812 17.90625 -15.21875 L 17.90625 -15.28125 C 17.90625 -16.632812 17.414062 -17.691406 16.4375 -18.453125 C 15.457031 -19.210938 14.082031 -19.59375 12.3125 -19.59375 L 5.5625 -19.59375 L 5.5625 -10.71875 Z M 3.09375 -21.875 L 12.5 -21.875 C 13.851562 -21.875 15.054688 -21.679688 16.109375 -21.296875 C 17.160156 -20.910156 18.03125 -20.375 18.71875 -19.6875 C 19.257812 -19.144531 19.675781 -18.507812 19.96875 -17.78125 C 20.257812 -17.050781 20.40625 -16.25 20.40625 -15.375 L 20.40625 -15.3125 C 20.40625 -14.394531 20.257812 -13.578125 19.96875 -12.859375 C 19.675781 -12.140625 19.265625 -11.515625 18.734375 -10.984375 C 18.203125 -10.453125 17.570312 -10.015625 16.84375 -9.671875 C 16.113281 -9.328125 15.320312 -9.082031 14.46875 -8.9375 L 21.1875 0 L 18.15625 0 L 11.8125 -8.5 L 5.5625 -8.5 L 5.5625 0 L 3.09375 0 Z M 3.09375 -21.875 "/></g><g id="glyph-0-12"><path d="M 11.84375 0.34375 C 10.488281 0.34375 9.253906 0.140625 8.140625 -0.265625 C 7.023438 -0.671875 6.066406 -1.273438 5.265625 -2.078125 C 4.460938 -2.878906 3.84375 -3.875 3.40625 -5.0625 C 2.96875 -6.25 2.75 -7.613281 2.75 -9.15625 L 2.75 -21.875 L 5.21875 -21.875 L 5.21875 -9.3125 C 5.21875 -6.9375 5.804688 -5.113281 6.984375 -3.84375 C 8.160156 -2.570312 9.800781 -1.9375 11.90625 -1.9375 C 13.925781 -1.9375 15.53125 -2.539062 16.71875 -3.75 C 17.90625 -4.957031 18.5 -6.757812 18.5 -9.15625 L 18.5 -21.875 L 20.96875 -21.875 L 20.96875 -9.34375 C 20.96875 -7.738281 20.75 -6.332031 20.3125 -5.125 C 19.875 -3.914062 19.253906 -2.90625 18.453125 -2.09375 C 17.648438 -1.28125 16.691406 -0.671875 15.578125 -0.265625 C 14.460938 0.140625 13.21875 0.34375 11.84375 0.34375 Z M 11.84375 0.34375 "/></g></g></defs><path fill-rule="nonzero" fill="currentColor" d="M 81.457031 56.261719 L 81.457031 56.867188 C 78.035156 56.867188 75.984375 58.996094 75.984375 63.863281 L 75.984375 83.28125 C 75.984375 100.085938 71.34375 107.996094 58.949219 109.820312 L 58.722656 109.210938 C 65.261719 106.851562 71.648438 101.683594 71.648438 85.179688 L 71.648438 73.140625 C 71.648438 58.847656 71.648438 56.867188 66.554688 56.867188 L 66.554688 56.261719 Z M 81.457031 56.261719 "/><path fill-rule="nonzero" fill="currentColor" d="M 99.253906 43.761719 L 99.253906 44.371094 C 95.828125 44.371094 93.777344 46.5 93.777344 51.367188 L 93.777344 96.132812 C 93.777344 112.9375 89.136719 120.847656 76.742188 122.671875 L 76.515625 122.0625 C 83.054688 119.707031 89.441406 114.535156 89.441406 98.03125 L 89.441406 60.644531 C 89.441406 46.347656 89.441406 44.371094 84.347656 44.371094 L 84.347656 43.761719 Z M 99.253906 43.761719 "/><path fill-rule="nonzero" fill="currentColor" d="M 143.394531 84.453125 L 143.394531 85.035156 C 139.425781 85.035156 139.296875 85.035156 139.296875 100.53125 C 135.257812 102.09375 130.179688 103.265625 123.210938 103.265625 C 109.152344 103.265625 103.09375 92.71875 103.09375 79.761719 C 103.09375 66.808594 109.152344 56.257812 123.210938 56.257812 C 132.132812 56.257812 135.453125 57.5625 139.492188 60.230469 L 138.839844 70.128906 L 138.253906 70.128906 C 138.253906 58.605469 130.894531 56.847656 123.210938 56.847656 C 115.789062 56.847656 107.914062 61.859375 107.914062 79.761719 C 107.914062 97.667969 115.921875 102.679688 123.210938 102.679688 C 130.828125 102.679688 136.039062 100.402344 136.039062 95.84375 C 136.039062 85.101562 136.039062 85.035156 131.15625 85.035156 L 131.15625 84.453125 Z M 143.394531 84.453125 "/><g fill="currentColor" fill-opacity="1"><use xlink:href="#glyph-0-0" x="154.100931" y="93.857879"/><use xlink:href="#glyph-0-1" x="179.165024" y="93.857879"/><use xlink:href="#glyph-0-2" x="200.728894" y="93.857879"/><use xlink:href="#glyph-0-1" x="224.792923" y="93.857879"/><use xlink:href="#glyph-0-3" x="246.356793" y="93.857879"/><use xlink:href="#glyph-0-4" x="266.326812" y="93.857879"/><use xlink:href="#glyph-0-5" x="293.51604" y="93.857879"/><use xlink:href="#glyph-0-6" x="315.017406" y="93.857879"/><use xlink:href="#glyph-0-1" x="342.76917" y="93.857879"/><use xlink:href="#glyph-0-7" x="364.33304" y="93.857879"/><use xlink:href="#glyph-0-8" x="389.647148" y="93.857879"/><use xlink:href="#glyph-0-9" x="410.523475" y="93.857879"/><use xlink:href="#glyph-0-10" x="420.52411" y="93.857879"/><use xlink:href="#glyph-0-11" x="445.650707" y="93.857879"/><use xlink:href="#glyph-0-4" x="468.870933" y="93.857879"/><use xlink:href="#glyph-0-12" x="496.06016" y="93.857879"/><use xlink:href="#glyph-0-5" x="520.405457" y="93.857879"/></g></svg> </a>
+<ul class="nav-links" id="navlinks">
+<li><a href="#top">Home</a></li>
+<li><a href="#what">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#how">Process</a></li>
+<li><a href="#work">Projects</a></li>
+<li><a href="#serve">Who We Serve</a></li>
+<li><a href="#questions">FAQ</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<a class="btn btn-gold nav-cta" href="#contact">Schedule a Consultation</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mmenu" id="mmenu" aria-hidden="true">
+<div class="mmenu-in">
+<ul class="mlinks">
+<li><a href="#top"><span>Home</span></a></li>
+<li><a href="#what"><span>About</span><small>What an owner's rep is</small></a></li>
+<li><a href="#services"><span>Services</span><small>What JJG handles</small></a></li>
+<li><a href="#how"><span>Process</span><small>What happens after you call</small></a></li>
+<li><a href="#work"><span>Projects</span><small>Track record</small></a></li>
+<li><a href="#serve"><span>Who We Serve</span><small>Commercial and residential</small></a></li>
+<li><a href="#questions"><span>FAQ</span><small>Owner's questions, answered</small></a></li>
+<li><a href="#contact"><span>Contact</span></a></li>
+</ul>
+<div class="mcontact">
+<a class="btn btn-gold" href="tel:+16312588787">Call John &nbsp;631-258-8787</a>
+<a class="btn btn-ghost" href="mailto:john@jjgdevelopmentgroup.com?subject=Consultation%20request">Email John</a>
+<a class="btn btn-ghost" href="sms:+16312588787">Text John</a>
+</div>
+<p class="mfoot">JJG Development Group<br>Owner's Representative, Long Island and the New York region</p>
+</div>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="top">
+<div class="hero-bg"><canvas id="grid" aria-hidden="true"></canvas></div>
+<div class="hero-scrim" aria-hidden="true"></div>
+<div class="wrap">
+<div class="hero-copy">
+<a class="logo-stack rv a1" href="#top" aria-label="JJG Development Group"><svg class="lg-s" role="img" aria-label="JJG Development Group" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="53.80 50.94 396.20 190.20"><defs><g><g id="glyph-0-0"><path d="M 3.421875 0 L 11.953125 0 C 18.671875 0 23.203125 -4.3125 23.203125 -10.484375 C 23.203125 -16.65625 18.671875 -20.984375 11.953125 -20.984375 L 3.421875 -20.984375 Z M 5.640625 -1.921875 L 5.640625 -19.0625 L 11.84375 -19.0625 C 17.40625 -19.0625 21.015625 -15.53125 21.015625 -10.484375 C 21.015625 -5.453125 17.40625 -1.921875 11.84375 -1.921875 Z M 5.640625 -1.921875 "/></g><g id="glyph-0-1"><path d="M 5.640625 -1.921875 L 5.640625 -9.703125 L 16.484375 -9.703125 L 16.484375 -11.59375 L 5.640625 -11.59375 L 5.640625 -19.0625 L 17.796875 -19.0625 L 17.796875 -20.984375 L 3.421875 -20.984375 L 3.421875 0 L 18.25 0 L 18.25 -1.921875 Z M 5.640625 -1.921875 "/></g><g id="glyph-0-2"><path d="M 18.609375 -20.984375 L 10.515625 -2.75 L 2.484375 -20.984375 L 0.09375 -20.984375 L 9.375 0 L 11.5625 0 L 20.859375 -20.984375 Z M 18.609375 -20.984375 "/></g><g id="glyph-0-3"><path d="M 3.421875 0 L 17.375 0 L 17.375 -1.921875 L 5.640625 -1.921875 L 5.640625 -20.984375 L 3.421875 -20.984375 Z M 3.421875 0 "/></g><g id="glyph-0-4"><path d="M 12.59375 0.1875 C 18.875 0.1875 23.578125 -4.34375 23.578125 -10.484375 C 23.578125 -16.625 18.875 -21.15625 12.59375 -21.15625 C 6.234375 -21.15625 1.5625 -16.609375 1.5625 -10.484375 C 1.5625 -4.375 6.234375 0.1875 12.59375 0.1875 Z M 12.59375 -1.796875 C 7.515625 -1.796875 3.75 -5.484375 3.75 -10.484375 C 3.75 -15.5 7.515625 -19.1875 12.59375 -19.1875 C 17.625 -19.1875 21.375 -15.5 21.375 -10.484375 C 21.375 -5.484375 17.625 -1.796875 12.59375 -1.796875 Z M 12.59375 -1.796875 "/></g><g id="glyph-0-5"><path d="M 11.265625 -20.984375 L 3.421875 -20.984375 L 3.421875 0 L 5.640625 0 L 5.640625 -6.625 L 11.265625 -6.625 C 16.609375 -6.625 19.84375 -9.3125 19.84375 -13.78125 C 19.84375 -18.28125 16.609375 -20.984375 11.265625 -20.984375 Z M 11.203125 -8.578125 L 5.640625 -8.578125 L 5.640625 -19.0625 L 11.203125 -19.0625 C 15.40625 -19.0625 17.625 -17.140625 17.625 -13.78125 C 17.625 -10.484375 15.40625 -8.578125 11.203125 -8.578125 Z M 11.203125 -8.578125 "/></g><g id="glyph-0-6"><path d="M 23.375 -20.984375 L 14.359375 -5.421875 L 5.25 -20.984375 L 3.421875 -20.984375 L 3.421875 0 L 5.546875 0 L 5.546875 -16.6875 L 13.78125 -2.671875 L 14.828125 -2.671875 L 23.078125 -16.78125 L 23.078125 0 L 25.203125 0 L 25.203125 -20.984375 Z M 23.375 -20.984375 "/></g><g id="glyph-0-7"><path d="M 18.765625 -20.984375 L 18.765625 -3.953125 L 5.25 -20.984375 L 3.421875 -20.984375 L 3.421875 0 L 5.640625 0 L 5.640625 -17.015625 L 19.125 0 L 20.953125 0 L 20.953125 -20.984375 Z M 18.765625 -20.984375 "/></g><g id="glyph-0-8"><path d="M 7.484375 0 L 9.703125 0 L 9.703125 -19.0625 L 17.078125 -19.0625 L 17.078125 -20.984375 L 0.125 -20.984375 L 0.125 -19.0625 L 7.484375 -19.0625 Z M 7.484375 0 "/></g><g id="glyph-0-9"></g><g id="glyph-0-10"><path d="M 18.1875 -3.421875 C 16.578125 -2.25 14.71875 -1.796875 12.703125 -1.796875 C 7.546875 -1.796875 3.75 -5.515625 3.75 -10.484375 C 3.75 -15.5 7.546875 -19.1875 12.734375 -19.1875 C 15.1875 -19.1875 17.296875 -18.453125 19.0625 -16.71875 L 20.4375 -18.125 C 18.578125 -20.140625 15.828125 -21.15625 12.640625 -21.15625 C 6.234375 -21.15625 1.5625 -16.625 1.5625 -10.484375 C 1.5625 -4.34375 6.234375 0.1875 12.609375 0.1875 C 15.53125 0.1875 18.34375 -0.71875 20.3125 -2.484375 L 20.3125 -10.484375 L 18.1875 -10.484375 Z M 18.1875 -3.421875 "/></g><g id="glyph-0-11"><path d="M 20.171875 0 L 15.046875 -7.1875 C 18.09375 -8.1875 19.84375 -10.484375 19.84375 -13.78125 C 19.84375 -18.28125 16.609375 -20.984375 11.265625 -20.984375 L 3.421875 -20.984375 L 3.421875 0 L 5.640625 0 L 5.640625 -6.65625 L 11.265625 -6.65625 C 11.875 -6.65625 12.40625 -6.6875 12.953125 -6.75 L 17.734375 0 Z M 11.203125 -8.546875 L 5.640625 -8.546875 L 5.640625 -19.0625 L 11.203125 -19.0625 C 15.40625 -19.0625 17.625 -17.140625 17.625 -13.78125 C 17.625 -10.484375 15.40625 -8.546875 11.203125 -8.546875 Z M 11.203125 -8.546875 "/></g><g id="glyph-0-12"><path d="M 11.875 0.1875 C 17.234375 0.1875 20.46875 -2.9375 20.46875 -8.953125 L 20.46875 -20.984375 L 18.3125 -20.984375 L 18.3125 -9.046875 C 18.3125 -4.078125 15.96875 -1.796875 11.875 -1.796875 C 7.796875 -1.796875 5.453125 -4.078125 5.453125 -9.046875 L 5.453125 -20.984375 L 3.234375 -20.984375 L 3.234375 -8.953125 C 3.234375 -2.9375 6.5 0.1875 11.875 0.1875 Z M 11.875 0.1875 "/></g></g></defs><path fill-rule="nonzero" fill="currentColor" d="M 222.46875 76.855469 L 222.46875 77.746094 C 217.46875 77.746094 214.472656 80.855469 214.472656 87.960938 L 214.472656 116.3125 C 214.472656 140.855469 207.699219 152.402344 189.597656 155.066406 L 189.265625 154.179688 C 198.816406 150.738281 208.144531 143.183594 208.144531 119.089844 L 208.144531 101.507812 C 208.144531 80.632812 208.144531 77.746094 200.703125 77.746094 L 200.703125 76.855469 Z M 222.46875 76.855469 "/><path fill-rule="nonzero" fill="currentColor" d="M 248.453125 58.605469 L 248.453125 59.496094 C 243.453125 59.496094 240.457031 62.605469 240.457031 69.710938 L 240.457031 135.078125 C 240.457031 159.621094 233.683594 171.171875 215.582031 173.835938 L 215.25 172.945312 C 224.800781 169.503906 234.128906 161.953125 234.128906 137.855469 L 234.128906 83.257812 C 234.128906 62.382812 234.128906 59.496094 226.6875 59.496094 L 226.6875 58.605469 Z M 248.453125 58.605469 "/><path fill-rule="nonzero" fill="currentColor" d="M 312.914062 118.023438 L 312.914062 118.878906 C 307.113281 118.878906 306.925781 118.878906 306.925781 141.507812 C 301.03125 143.789062 293.613281 145.5 283.441406 145.5 C 262.90625 145.5 254.066406 130.097656 254.066406 111.175781 C 254.066406 92.257812 262.90625 76.855469 283.441406 76.855469 C 296.46875 76.855469 301.316406 78.757812 307.210938 82.65625 L 306.261719 97.105469 L 305.402344 97.105469 C 305.402344 80.28125 294.660156 77.710938 283.441406 77.710938 C 272.605469 77.710938 261.101562 85.035156 261.101562 111.175781 C 261.101562 137.320312 272.796875 144.644531 283.441406 144.644531 C 294.566406 144.644531 302.171875 141.316406 302.171875 134.660156 C 302.171875 118.972656 302.171875 118.878906 295.042969 118.878906 L 295.042969 118.023438 Z M 312.914062 118.023438 "/><g fill="currentColor" fill-opacity="1"><use xlink:href="#glyph-0-0" x="58.095323" y="233.539417"/><use xlink:href="#glyph-0-1" x="84.353954" y="233.539417"/></g><g fill="currentColor" fill-opacity="1"><use xlink:href="#glyph-0-2" x="105.606659" y="233.539417"/></g><g fill="currentColor" fill-opacity="1"><use xlink:href="#glyph-0-1" x="127.578779" y="233.539417"/><use xlink:href="#glyph-0-3" x="149.13124" y="233.539417"/></g><g fill="currentColor" fill-opacity="1"><use xlink:href="#glyph-0-4" x="167.865994" y="233.539417"/><use xlink:href="#glyph-0-5" x="194.514308" y="233.539417"/></g><g fill="currentColor" fill-opacity="1"><use xlink:href="#glyph-0-6" x="217.23282" y="233.539417"/><use xlink:href="#glyph-0-1" x="247.358304" y="233.539417"/><use xlink:href="#glyph-0-7" x="268.910765" y="233.539417"/><use xlink:href="#glyph-0-8" x="294.779713" y="233.539417"/><use xlink:href="#glyph-0-9" x="313.484492" y="233.539417"/><use xlink:href="#glyph-0-10" x="322.836881" y="233.539417"/><use xlink:href="#glyph-0-11" x="347.506805" y="233.539417"/><use xlink:href="#glyph-0-4" x="370.677949" y="233.539417"/><use xlink:href="#glyph-0-12" x="397.326263" y="233.539417"/><use xlink:href="#glyph-0-5" x="422.565723" y="233.539417"/></g></svg> </a>
+<p class="eyebrow rv a2">Owner's Representative</p>
+<h1 class="a3">
+<span class="ln"><span>Someone on</span></span>
+<span class="ln"><span><em>your</em> side</span></span>
+<span class="ln"><span>of the table.</span></span>
+<span class="ln sub"><span>From the first drawing to the final walkthrough.</span></span>
+</h1>
+<p class="lede rv a4">For nearly 30 years, John Guido has protected owners' budgets, schedules, and vision on some of the region's biggest builds. Now he does it for yours.</p>
+<div class="proof rv a4"><span class="pv">$473M</span><span class="pl">Good Samaritan Hospital patient tower, 312,000 sq ft, delivered as owner's representative</span></div>
+<div class="hero-cta rv a4">
+<a class="btn btn-gold" href="#contact">Schedule a Consultation <span class="arr">&rarr;</span></a>
+<a class="btn btn-ghost" href="#work">See the Work</a>
+</div>
+</div>
+<figure class="hero-fig rv a5" style="margin:0">
+<span class="arc"></span><span class="arc two"></span><span class="arc three"></span><span class="arc fill"></span>
+<img src="headshot.webp" alt="John Guido, founder of JJG Development Group" width="683" height="1024">
+<figcaption class="tag"><span>Principal</span>John Guido<br>28 yrs in the field</figcaption>
+</figure>
+</div>
+<div class="scroll-cue"><i></i>Scroll</div>
+</header>
+
+<!-- STATS -->
+<section class="stats" aria-label="Credentials">
+<div class="wrap">
+<div class="stat rv"><div class="num" data-count="28">0</div><div class="lab">years of construction and project leadership</div></div>
+<div class="stat rv d1"><div class="num"><span data-count="690" data-prefix="$">0</span><small>M+</small></div><div class="lab">in documented project value</div></div>
+<div class="stat rv d2"><div class="num"><span data-count="312000">0</span><small>sq ft</small></div><div class="lab">largest single ground-up build</div></div>
+<div class="stat rv d3"><div class="num" data-count="5">0</div><div class="lab">sectors: healthcare, hospitality, higher education, corporate, research</div></div>
+</div>
+</section>
+
+<!-- WHAT IS AN OWNER'S REP -->
+<section class="band on-navy def" id="what">
+<div class="wrap">
+<div class="rv">
+<p class="eyebrow">What is an owner's representative?</p>
+<h2>Building something significant should not mean managing it alone.</h2>
+<p class="lede" style="color:#C7D3DF">An owner's representative is your single advocate on a construction project. Contractors, architects, and vendors each answer to their own firms. An owner's rep answers only to you. JJG stands on your side of the table, translating the construction world into clear choices and holding every party accountable to what you signed up for, from the first drawing to the final walkthrough.</p>
+</div>
+<div class="rv d1">
+<svg class="diagram" viewBox="0 0 520 420" role="img" aria-label="Diagram: the architect, general contractor, and vendors each answer to their own firms. JJG sits beside the owner and answers only to them.">
+<line class="link" x1="130" y1="110" x2="260" y2="230"/>
+<line class="link" x1="390" y1="110" x2="260" y2="230"/>
+<line class="link" x1="430" y1="300" x2="260" y2="230"/>
+<line class="link" x1="130" y1="110" x2="60" y2="40"/>
+<line class="link" x1="390" y1="110" x2="460" y2="40"/>
+<line class="link" x1="430" y1="300" x2="490" y2="360"/>
+<path class="link-g" d="M100 330 L230 250"/>
+<circle class="node" cx="130" cy="110" r="44"/>
+        <text x="130" y="106" text-anchor="middle">Architect</text>
+        <text x="130" y="122" text-anchor="middle" style="font-size:9px;opacity:.6">designs</text>
+<circle class="node" cx="390" cy="110" r="44"/>
+        <text x="390" y="106" text-anchor="middle">Contractor</text>
+        <text x="390" y="122" text-anchor="middle" style="font-size:9px;opacity:.6">builds</text>
+<circle class="node" cx="430" cy="300" r="40"/>
+        <text x="430" y="304" text-anchor="middle">Vendors</text>
+        <text x="60" y="34" text-anchor="middle" style="font-size:8px;opacity:.5">their firm</text>
+        <text x="460" y="34" text-anchor="middle" style="font-size:8px;opacity:.5">their firm</text>
+        <text x="490" y="380" text-anchor="middle" style="font-size:8px;opacity:.5">their firms</text>
+<circle class="hub" cx="260" cy="230" r="58"/>
+        <text class="you" x="260" y="226" text-anchor="middle" style="font-size:13px">You</text>
+        <text x="260" y="244" text-anchor="middle" style="font-size:9px;opacity:.7">the owner</text>
+<rect x="38" y="298" width="124" height="66" fill="#0A1A28" stroke="#C9A24C" stroke-width="1"/>
+<g transform="translate(86 308) scale(0.2169) translate(-52.71 -49.83)" fill="#C9A24C"><path fill-rule="nonzero"  d="M 88.355469 70.601562 L 88.355469 71.492188 C 83.351562 71.492188 80.351562 74.605469 80.351562 81.71875 L 80.351562 110.089844 C 80.351562 134.652344 73.574219 146.210938 55.457031 148.878906 L 55.125 147.992188 C 64.683594 144.542969 74.019531 136.984375 74.019531 112.871094 L 74.019531 95.273438 C 74.019531 74.382812 74.019531 71.492188 66.570312 71.492188 L 66.570312 70.601562 Z M 88.355469 70.601562 "/><path fill-rule="nonzero"  d="M 114.359375 52.339844 L 114.359375 53.230469 C 109.355469 53.230469 106.355469 56.339844 106.355469 63.453125 L 106.355469 128.875 C 106.355469 153.433594 99.578125 164.996094 81.464844 167.660156 L 81.128906 166.773438 C 90.6875 163.328125 100.023438 155.769531 100.023438 131.652344 L 100.023438 77.011719 C 100.023438 56.117188 100.023438 53.230469 92.578125 53.230469 L 92.578125 52.339844 Z M 114.359375 52.339844 "/><path fill-rule="nonzero"  d="M 178.875 111.804688 L 178.875 112.660156 C 173.070312 112.660156 172.878906 112.660156 172.878906 135.304688 C 166.980469 137.589844 159.558594 139.300781 149.378906 139.300781 C 128.828125 139.300781 119.976562 123.886719 119.976562 104.953125 C 119.976562 86.019531 128.828125 70.601562 149.378906 70.601562 C 162.414062 70.601562 167.265625 72.507812 173.164062 76.40625 L 172.214844 90.871094 L 171.359375 90.871094 C 171.359375 74.027344 160.605469 71.460938 149.378906 71.460938 C 138.53125 71.460938 127.015625 78.785156 127.015625 104.953125 C 127.015625 131.117188 138.722656 138.445312 149.378906 138.445312 C 160.507812 138.445312 168.125 135.113281 168.125 128.453125 C 168.125 112.753906 168.125 112.660156 160.988281 112.660156 L 160.988281 111.804688 Z M 178.875 111.804688 "/></g>
+        <text x="100" y="352" text-anchor="middle" style="font-size:7.5px;opacity:.8;letter-spacing:.1em">answers only to you</text>
+</svg>
+</div>
+</div>
+</section>
+
+<!-- Q&A -->
+<section class="band on-bone qa" id="questions">
+<div class="wrap">
+<div class="rv">
+<p class="eyebrow">Owner's questions, answered</p>
+<h2 style="color:var(--navy)">The questions owners ask before they hire us.</h2>
+</div>
+<div class="qa-list rv d1">
+<details class="qa-item" open><summary><h3>What does an owner's representative actually do?</h3><span class="plus"></span></summary><p>An owner's rep manages the architects, contractors, and vendors on your behalf, controls the budget and schedule, and makes sure the finished building matches what you were promised. You get expertise on your side without having to live on the job site.</p></details>
+<details class="qa-item"><summary><h3>When should I bring one in?</h3><span class="plus"></span></summary><p>The earlier the better, ideally before the first shovel hits the ground. The decisions that shape your budget and timeline are made early, and that is when an owner's rep protects you most.</p></details>
+<details class="qa-item"><summary><h3>How is that different from my architect or general contractor?</h3><span class="plus"></span></summary><p>Your architect designs and your contractor builds, and both answer to their own firms. An owner's rep answers only to you, coordinating both and watching the details that neither is paid to protect on your behalf.</p></details>
+<details class="qa-item"><summary><h3>What kind of projects does JJG take on?</h3><span class="plus"></span></summary><p>Commercial and institutional work such as hospitals, hotels, corporate labs, and research facilities, along with residential builds where owners want the same discipline applied to their home.</p></details>
+<details class="qa-item"><summary><h3>Do I still need one if I trust my builder?</h3><span class="plus"></span></summary><p>A good builder builds well. An owner's rep makes sure the whole project, budget, schedule, contracts, and quality, serves you. The two roles protect different things.</p></details>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="band on-navy svc" id="services">
+<div class="wrap">
+<div class="svc-head">
+<div class="rv"><p class="eyebrow">What an owner's rep does</p><h2>One point of contact for the entire build.</h2></div>
+<p class="lede rv d1" style="color:#C7D3DF">Every phase, every party, every dollar. JJG carries the coordination so you can make the decisions that matter and skip the ones that should never reach your desk.</p>
+</div>
+<div class="svc-grid">
+<div class="svc-cell rv"><svg class="ico" viewBox="0 0 36 36"><circle cx="18" cy="18" r="13"/><circle cx="18" cy="18" r="6"/><circle cx="18" cy="18" r="1"/><line x1="18" y1="2" x2="18" y2="7"/></svg><p>Set goals, timelines, and budgets that stay true to your vision</p></div>
+<div class="svc-cell rv d1"><svg class="ico" viewBox="0 0 36 36"><path d="M4 28 L12 18 L19 23 L32 8"/><path d="M25 8 H32 V15"/></svg><p>Monitor spending and control costs against the approved budget</p></div>
+<div class="svc-cell rv d2"><svg class="ico" viewBox="0 0 36 36"><rect x="7" y="4" width="22" height="28"/><line x1="12" y1="11" x2="24" y2="11"/><line x1="12" y1="16" x2="24" y2="16"/><line x1="12" y1="21" x2="19" y2="21"/><path d="M20 27 l2 2 l4 -4"/></svg><p>Review and negotiate contracts with contractors, vendors, and stakeholders</p></div>
+<div class="svc-cell rv"><svg class="ico" viewBox="0 0 36 36"><circle cx="18" cy="18" r="4"/><circle cx="6" cy="8" r="3"/><circle cx="30" cy="8" r="3"/><circle cx="18" cy="31" r="3"/><line x1="9" y1="10" x2="15" y2="15"/><line x1="27" y1="10" x2="21" y2="15"/><line x1="18" y1="22" x2="18" y2="28"/></svg><p>Serve as the single point of contact between you, the contractors, and the architects</p></div>
+<div class="svc-cell rv d1"><svg class="ico" viewBox="0 0 36 36"><path d="M18 4 L33 30 H3 Z"/><line x1="18" y1="14" x2="18" y2="22"/><circle cx="18" cy="26" r=".6"/></svg><p>Identify risks, delays, and cost overruns early, then act to prevent them</p></div>
+<div class="svc-cell rv d2"><svg class="ico" viewBox="0 0 36 36"><rect x="4" y="20" width="8" height="12"/><rect x="14" y="12" width="8" height="20"/><rect x="24" y="5" width="8" height="27"/></svg><p>Track construction progress and hold work to quality standards and specs</p></div>
+<div class="svc-cell rv"><svg class="ico" viewBox="0 0 36 36"><rect x="4" y="7" width="28" height="24"/><line x1="4" y1="13" x2="32" y2="13"/><line x1="11" y1="4" x2="11" y2="9"/><line x1="25" y1="4" x2="25" y2="9"/><path d="M12 22 l4 4 l8 -8"/></svg><p>Keep the schedule honest and resolve conflicts before they cost you</p></div>
+<div class="svc-cell rv d1"><svg class="ico" viewBox="0 0 36 36"><path d="M18 3 L30 8 V17 C30 25 24 30 18 33 C12 30 6 25 6 17 V8 Z"/><path d="M13 18 l3.5 3.5 l7 -7"/></svg><p>Ensure every phase meets safety regulations, building codes, and contract terms</p></div>
+<div class="svc-cell rv d2"><svg class="ico" viewBox="0 0 36 36"><circle cx="15" cy="15" r="9"/><line x1="22" y1="22" x2="32" y2="32"/><path d="M11 15 h8 M15 11 v8"/></svg><p>Conduct regular site inspections so the finished project matches expectations</p></div>
+</div>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="band on-deep how" id="how">
+<div class="wrap">
+<div class="rv"><p class="eyebrow">How it works</p><h2>What happens after you call.</h2>
+<p class="lede" style="color:#C7D3DF">Four stages, one point of contact. Here is where JJG earns its keep at each one.</p></div>
+<ol class="steps">
+<li class="step rv"><span class="ph">Pre-construction</span><h3>Define the job before it costs anything.</h3><p>We set goals, budget, and schedule with you, vet and assemble the architect and consultants, and write the plan every later decision is measured against.</p></li>
+<li class="step rv d1"><span class="ph">Design and bidding</span><h3>Turn drawings into a fair price.</h3><p>We review design for cost and constructability, run the bid, level the numbers, and negotiate the contracts so the scope you are paying for is the scope you get.</p></li>
+<li class="step rv d2"><span class="ph">Construction</span><h3>Hold every party to the plan.</h3><p>Regular site inspections, schedule and budget tracking, change order review, and one clear line of communication so nothing surprises you.</p></li>
+<li class="step rv d3"><span class="ph">Closeout</span><h3>Finish the way it was promised.</h3><p>Punch list, commissioning, final payments, warranties, and turnover documents, checked and closed so you walk into a finished building, not a to-do list.</p></li>
+</ol>
+</div>
+</section>
+
+<!-- TRACK RECORD -->
+<section class="band on-bone track" id="work">
+<div class="wrap">
+<div class="rv">
+<p class="eyebrow">Track record</p>
+<h2 style="color:var(--navy)">Trusted where the stakes are real.</h2>
+<p class="lede">A selection from John's project history as owner's representative and senior project lead.</p>
+</div>
+<div class="sched-layout rv d1"><div class="sched-wrap">
+<table class="sched">
+<thead><tr><th>Project</th><th>Scope</th><th class="bar"></th><th style="text-align:right">Value</th></tr></thead>
+<tbody>
+<tr style="--i:0"><td class="name">Good Samaritan Hospital, Patient Tower</td><td class="scope">Ground-up / 312,000 sq ft</td><td class="bar"><div class="b"><i style="--w:100%"></i></div></td><td class="val">$473M</td></tr>
+<tr style="--i:1"><td class="name">St. John's University, Basketball Training Facility</td><td class="scope">Ground-up / 54,000 sq ft</td><td class="bar"><div class="b"><i style="--w:14.2%"></i></div></td><td class="val">$67M</td></tr>
+<tr style="--i:2"><td class="name">Newsday Media Group, New Headquarters</td><td class="scope">120,000 sq ft</td><td class="bar"><div class="b"><i style="--w:7.4%"></i></div></td><td class="val">$35M</td></tr>
+<tr style="--i:3"><td class="name">Marriott TownePlace Suites</td><td class="scope">Ground-up / 82,000 sq ft</td><td class="bar"><div class="b"><i style="--w:5.3%"></i></div></td><td class="val">$25M</td></tr>
+<tr style="--i:4"><td class="name">Marriott Courtyard</td><td class="scope">Ground-up / 110,000 sq ft</td><td class="bar"><div class="b"><i style="--w:4.7%"></i></div></td><td class="val">$22M</td></tr>
+<tr style="--i:5"><td class="name">Hilton Homewood Suites</td><td class="scope">Ground-up / 74,000 sq ft</td><td class="bar"><div class="b"><i style="--w:4%"></i></div></td><td class="val">$19M</td></tr>
+<tr style="--i:6"><td class="name">Good Samaritan Hospital, 400-car Parking Lot</td><td class="scope">FEMA work</td><td class="bar"><div class="b"><i style="--w:3.2%"></i></div></td><td class="val">$15M</td></tr>
+<tr style="--i:7"><td class="name">Underwriters Laboratories</td><td class="scope">Buildout / 60,000 sq ft</td><td class="bar"><div class="b"><i style="--w:2.5%"></i></div></td><td class="val">$12M</td></tr>
+<tr style="--i:8"><td class="name">Good Samaritan Hospital, Chiller Plant</td><td class="scope">Ground-up / 10,000 sq ft</td><td class="bar"><div class="b"><i style="--w:2.1%"></i></div></td><td class="val">$10M</td></tr>
+<tr style="--i:9"><td class="name">Good Samaritan Hospital, Make-ready Work</td><td class="scope">1,000 to 10,000 sq ft</td><td class="bar"><div class="b"><i style="--w:1.1%"></i></div></td><td class="val">~$5M</td></tr>
+<tr style="--i:10"><td class="name">Zebra Technologies</td><td class="scope">Multiple small projects</td><td class="bar"><div class="b"><i style="--w:1.1%"></i></div></td><td class="val">~$5M</td></tr>
+<tr style="--i:11"><td class="name">United Health Group</td><td class="scope">Multiple outpatient buildouts</td><td class="bar"><div class="b"><i style="--w:.4%"></i></div></td><td class="val">$500K to $2M ea.</td></tr>
+<tr style="--i:12"><td class="name">Honeywell</td><td class="scope">Lab buildout / 1,400 sq ft</td><td class="bar"><div class="b"><i style="--w:.3%"></i></div></td><td class="val">$1M</td></tr>
+<tr style="--i:13"><td class="name">Brookhaven National Laboratory</td><td class="scope">28 yrs facility and construction PM / 1.1M sq ft</td><td class="bar"><div class="b"><i style="--w:0%"></i></div></td><td class="val">Institutional</td></tr>
+</tbody>
+</table>
+</div>
+<aside class="sched-focus" id="schedFocus" aria-hidden="true">
+<span class="sf-lab">Project value</span>
+<span class="sf-val" id="sfVal">$473M</span>
+<span class="sf-name" id="sfName">Good Samaritan Hospital, Patient Tower</span>
+<span class="sf-scope" id="sfScope">Ground-up / 312,000 sq ft</span>
+</aside>
+</div>
+<div class="sched-foot rv d2">
+<span>Total documented value <b>$690M+</b></span>
+<span>Healthcare, hospitality, higher education, corporate, and research work across Long Island and beyond.</span>
+</div>
+</div>
+</section>
+<div class="clients" aria-label="Clients and institutions">
+<div class="lab">Work delivered for</div>
+<div class="marquee" id="marquee"><span class="ci">Good Samaritan Hospital</span><span class="ci"><svg class="bm" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.802 11.083l-1.178 2.41c-.8 1.425-1.931 3.167-3.646 3.603-.668.232-1.255.023-1.9-.023L0 20.476a1.626 1.626 0 0 0 .59.386c3.647 1.39 5.122-.1 8.722-8.238l3.403 7.249h4.53l-2.14-4.893 1.213-2.53 3.345 7.311 4.337.027-7.59-16.677-3.475 1.738 2.738 6.222-1.201 2.445L9.45 2.678l-3.7 1.877Z"/></svg>Marriott</span><span class="ci"><svg class="bm wide" viewBox="0 0 24 24" aria-hidden="true"><path d="M0 7.544v8.912h24V7.544H0zm23.588 8.503H.406V7.95h23.182v8.097zM3.682 14.41h-1.62v-.249l.324-.044V9.873l-.324-.045v-.242h1.62v.242l-.324.045v1.813h2.107V9.873l-.355-.045v-.242h1.647v.242l-.334.045v4.244l.334.044v.25H5.11v-.25l.355-.044v-1.933H3.358v1.933l.324.044v.25zm5.298 0H7.466v-.218l.31-.044V11.24l-.31-.045v-.218h1.203v3.17l.31.045v.218zm2.171.004H9.638v-.215l.303-.041V9.845l-.303-.044V9.59h1.203v4.568l.31.04v.216zm.941-3.116h-.634v-.32h.658v-.717l.88-.262v.978h.807v.32h-.81v2.043c0 .528.108.695.589.695.177 0 .334 0 .48-.037v.235c-.436.153-.804.218-1.114.218-.696 0-.856-.314-.856-.914v-2.24zm3.924 3.214c1.139 0 1.861-.715 1.861-1.786 0-1.176-.678-1.844-1.803-1.844-1.139 0-1.861.74-1.861 1.844 0 1.32.702 1.786 1.803 1.786zm.024-3.364c.525 0 .849.474.849 1.558 0 1.111-.304 1.544-.85 1.544-.51 0-.834-.453-.834-1.544 0-1.105.323-1.558.835-1.558zm3.72 3.262h-1.521v-.218l.31-.044v-2.884l-.31-.045v-.242h1.21v.478c.375-.3.74-.543 1.248-.543.678 0 .981.396.981 1.173v2.066l.31.041v.218h-1.513v-.218l.303-.044v-1.954c0-.542-.2-.784-.613-.784-.191 0-.495.133-.716.287v2.45l.31.045v.218zM7.738 10.07a.487.487 0 0 1 .975 0 .487.487 0 0 1-.488.485.485.485 0 0 1-.487-.485z"/></svg>Hilton</span><span class="ci">St. John's University</span><span class="ci">Newsday</span><span class="ci">Honeywell</span><span class="ci"><svg class="bm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.145 13.109H4.6v-1.545l.545.546v.999zm-2.183-.095.546.546v.771L2.417 13.24v-3.092L1.003 8.739a2.73 2.73 0 0 1 .465-.306l1.494 1.489V8.126a.899.899 0 0 1 .084 1.793h.7l.002.003.543.543H2.962v2.549zm.546-2.545-.003 2.636h.546l.002-2.088-.545-.548zm1.873 1.095-.546-.546h-.781l.545.546h.782zm-3.51 1.162v-2.348L.616 9.125c-.118.143-.221.299-.308.464l1.016 1.016v.771L.093 10.144c-.059.217-.09.445-.093.68l1.87 1.902zM.01 11.604v.772l3.498 3.499v-.772L.01 11.605zm6.227.815h-.546v.69h-.546a.899.899 0 1 0 1.798 0l-.706-.69zm2.977.701 1.658-3.186h-2.55l-.41.78h1.469l-1.659 3.185h2.551l.41-.779H9.213zm2.95-2.407h1.307v-.779h-2.27V13.9h2.27v-.778h-1.308v-.82h1.308v-.78h-1.308v-.808zm1.78-.779V13.9h1.622c.404 0 .642-.053.838-.184.256-.173.404-.5.404-.868 0-.291-.089-.523-.267-.69-.125-.119-.232-.172-.476-.226.214-.059.303-.112.416-.231a.937.937 0 0 0 .268-.69c0-.38-.167-.72-.44-.886-.214-.136-.505-.19-1.01-.19h-1.356zm.962.72h.226c.452 0 .636.136.636.457 0 .327-.184.464-.624.464h-.238v-.921zm0 1.622h.22c.291 0 .387.012.493.072.143.077.214.214.214.404 0 .32-.172.458-.576.458h-.35v-.934zm3.239.09.868 1.533h1.153l-.874-1.456c.511-.202.767-.6.767-1.207 0-.434-.155-.79-.428-1.005-.262-.202-.642-.297-1.165-.297h-1.284V13.9h.963v-1.533zm0-.541v-1.1h.368c.34 0 .571.226.571.553 0 .344-.238.547-.63.547h-.309zm4.566 1.294h-1.285l-.245.78h-1.015l1.308-3.964h1.224L24 13.899h-1.045l-.244-.78zm-.244-.78-.398-1.269-.398 1.27h.796z"/></svg>Zebra Technologies</span><span class="ci">United Health Group</span><span class="ci">Underwriters Laboratories</span><span class="ci">Brookhaven National Laboratory</span></div>
+</div>
+
+<!-- WHY -->
+<section class="band on-deep why" id="why">
+<div class="wrap">
+<div class="rv"><p class="eyebrow">Why it matters</p><h2>What you gain with JJG in your corner.</h2></div>
+<div class="why-list">
+<div class="why-item rv"><h3>Expertise</h3><p>Nearly 30 years of hands-on construction knowledge informs every decision, so you move forward with confidence instead of guesswork.</p></div>
+<div class="why-item rv"><h3>Oversight</h3><p>Someone watches progress at all times, addressing issues before they can derail your timeline or budget.</p></div>
+<div class="why-item rv"><h3>Cost control</h3><p>Your financial goals stay front and center. We track expenses and negotiate contracts so you get full value from every dollar.</p></div>
+<div class="why-item rv"><h3>Communication</h3><p>One clear point of contact manages every team, so all parties stay on the same page.</p></div>
+<div class="why-item rv"><h3>Schedule</h3><p>With JJG overseeing milestones, your project keeps moving and stays on track.</p></div>
+</div>
+</div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="serve" id="serve" aria-label="Who we serve">
+<div class="serve-panel serve-c">
+<canvas class="skyline" data-kind="commercial" aria-hidden="true"></canvas>
+<span class="serve-big" aria-hidden="true">Capital</span>
+<p class="kicker rv">Commercial and Institutional</p>
+<h3 class="rv d1">Capital projects, protected.</h3>
+<p class="rv d2">For developers, businesses, hospitals, universities, and institutional owners, JJG protects projects where the scrutiny and the dollar figures run high. The track record speaks to it: hospitals, hotels, corporate labs, and research facilities delivered on budget and on schedule. Owners get the oversight and reporting they need to make informed calls without living on the job site.</p>
+</div>
+<div class="serve-panel serve-r">
+<canvas class="skyline" data-kind="residential" aria-hidden="true"></canvas>
+<span class="serve-big" aria-hidden="true">Home</span>
+<p class="kicker rv">Residential</p>
+<h3 class="rv d1">Your home, without the stress.</h3>
+<p class="rv d2">For homeowners, JJG brings that same institutional discipline to the most personal project you will ever build. The rigor that keeps a $473M hospital on track is the rigor applied to your home, managing the details, the trades, and the decisions so it comes together the way you imagined.</p>
+</div>
+</section>
+
+<!-- WHEN -->
+<section class="band on-navy when" id="when">
+<div class="wrap">
+<div class="rv">
+<p class="eyebrow">When to engage</p>
+<h2>The earlier, the better.</h2>
+<p class="lede" style="color:#C7D3DF">The best time to engage an owner's representative is before the first shovel hits the ground, when the decisions that shape your budget and timeline are still on the table.</p>
+</div>
+<div class="rv d1">
+<svg class="curve" viewBox="0 0 560 330" role="img" aria-label="Chart: your ability to influence cost falls sharply as a project moves from planning to construction, while the cost of making a change rises. The window where an owner's rep protects you most is early.">
+<rect class="zone" x="60" y="30" width="150" height="240"/>
+        <text class="lbl" x="70" y="24">Most leverage</text>
+<line class="axis" x1="60" y1="270" x2="530" y2="270"/>
+<line class="axis" x1="60" y1="30" x2="60" y2="270"/>
+<path class="line-c" d="M60 50 C 160 60, 230 150, 300 220 S 470 265, 530 268"/>
+<path class="line-i" d="M60 266 C 200 262, 300 230, 380 160 S 500 50, 530 36"/>
+        <text x="60" y="292">Planning</text>
+        <text x="200" y="292">Design</text>
+        <text x="330" y="292">Bidding</text>
+        <text x="450" y="292">Construction</text>
+        <text class="lbl" x="220" y="100" style="font-size:9px">Ability to influence cost</text>
+        <text x="330" y="170" style="font-size:9px;fill:#C7D3DF">Cost of making a change</text>
+        <text x="60" y="318" style="font-size:9px;opacity:.6">Illustrative, not to scale</text>
+</svg>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="band cta" id="contact">
+<div class="wrap cta-grid">
+<div class="cta-copy">
+<p class="eyebrow rv">Schedule a consultation</p>
+<h2 class="rv d1">Let's protect your <em>next</em> project.</h2>
+<p class="lede rv d2">Tell us what you are building. We will show you how an owner's rep keeps it on budget, on schedule, and true to your vision.</p>
+<div class="contact rv d3">
+<a href="tel:+16312588787">631-258-8787</a>
+<a href="mailto:john@jjgdevelopmentgroup.com">john@jjgdevelopmentgroup.com</a>
+</div>
+</div>
+<form class="cform rv d2" id="cform" novalidate>
+<div class="f2">
+<label class="fld"><span>Name</span><input type="text" name="name" autocomplete="name" required></label>
+<label class="fld"><span>Company or organization</span><input type="text" name="company" autocomplete="organization"></label>
+</div>
+<div class="f2">
+<label class="fld"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+<label class="fld"><span>Phone</span><input type="tel" name="phone" autocomplete="tel"></label>
+</div>
+<fieldset class="fld seg"><legend>What are you building?</legend>
+<label><input type="radio" name="type" value="Commercial or institutional" checked><span>Commercial</span></label>
+<label><input type="radio" name="type" value="Residential"><span>Residential</span></label>
+</fieldset>
+<div class="f2">
+<label class="fld"><span>Project stage</span>
+<select name="stage"><option>Still planning</option><option>Have an architect</option><option>Ready to bid</option><option>Already under construction</option></select></label>
+<label class="fld"><span>Approximate budget</span>
+<select name="budget"><option>Prefer not to say</option><option>Under $1M</option><option>$1M to $5M</option><option>$5M to $25M</option><option>$25M to $100M</option><option>Over $100M</option></select></label>
+</div>
+<label class="fld"><span>Tell us about the project</span><textarea name="message" rows="4" placeholder="Location, size, timing, and what you want protected most."></textarea></label>
+<div class="fact">
+<button class="btn btn-gold" type="submit">Send Request <span class="arr">&rarr;</span></button>
+<span class="fnote">Your details go directly to John Guido.</span>
+</div>
+<p class="ferr" id="ferr" role="alert" hidden>Please add your name and a working email so John can reply.</p>
+<div class="fdone" id="fdone" hidden>
+<span class="fd-mark">&#10003;</span>
+<h3>Thank you. Your request is on its way.</h3>
+<p>John will be in touch shortly. If it is time sensitive, call <a href="tel:+16312588787">631-258-8787</a>.</p>
+</div>
+</form>
+</div>
+</section>
+
+<a class="mcta" href="#contact">Schedule a Consultation <span class="arr">&rarr;</span></a>
+<footer>
+<span class="wm" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="52.71 49.83 128.25 119.85"><path fill-rule="nonzero" fill="currentColor" d="M 88.355469 70.601562 L 88.355469 71.492188 C 83.351562 71.492188 80.351562 74.605469 80.351562 81.71875 L 80.351562 110.089844 C 80.351562 134.652344 73.574219 146.210938 55.457031 148.878906 L 55.125 147.992188 C 64.683594 144.542969 74.019531 136.984375 74.019531 112.871094 L 74.019531 95.273438 C 74.019531 74.382812 74.019531 71.492188 66.570312 71.492188 L 66.570312 70.601562 Z M 88.355469 70.601562 "/><path fill-rule="nonzero" fill="currentColor" d="M 114.359375 52.339844 L 114.359375 53.230469 C 109.355469 53.230469 106.355469 56.339844 106.355469 63.453125 L 106.355469 128.875 C 106.355469 153.433594 99.578125 164.996094 81.464844 167.660156 L 81.128906 166.773438 C 90.6875 163.328125 100.023438 155.769531 100.023438 131.652344 L 100.023438 77.011719 C 100.023438 56.117188 100.023438 53.230469 92.578125 53.230469 L 92.578125 52.339844 Z M 114.359375 52.339844 "/><path fill-rule="nonzero" fill="currentColor" d="M 178.875 111.804688 L 178.875 112.660156 C 173.070312 112.660156 172.878906 112.660156 172.878906 135.304688 C 166.980469 137.589844 159.558594 139.300781 149.378906 139.300781 C 128.828125 139.300781 119.976562 123.886719 119.976562 104.953125 C 119.976562 86.019531 128.828125 70.601562 149.378906 70.601562 C 162.414062 70.601562 167.265625 72.507812 173.164062 76.40625 L 172.214844 90.871094 L 171.359375 90.871094 C 171.359375 74.027344 160.605469 71.460938 149.378906 71.460938 C 138.53125 71.460938 127.015625 78.785156 127.015625 104.953125 C 127.015625 131.117188 138.722656 138.445312 149.378906 138.445312 C 160.507812 138.445312 168.125 135.113281 168.125 128.453125 C 168.125 112.753906 168.125 112.660156 160.988281 112.660156 L 160.988281 111.804688 Z M 178.875 111.804688 "/></svg> </span>
+<div class="wrap">
+<div class="addr"><b>John Guido</b>JJG Development Group<br>Owner's Representative<br>631-258-8787 &nbsp;&middot;&nbsp; john@jjgdevelopmentgroup.com</div>
+<div class="fine">&copy; 2026 JJG Development Group<br>Serving Long Island and the New York region</div>
+</div>
+</footer>
+
+<script>
+(function(){
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Nav appears after the hero
+var nav=document.getElementById('nav'), hero=document.getElementById('top');
+var mcta=document.querySelector('.mcta'), contact=document.getElementById('contact');
+function onScroll(){ var past=window.scrollY > 40; nav.classList.toggle('show', past); var atContact = contact.getBoundingClientRect().top < window.innerHeight*0.6; mcta.classList.toggle('show', window.scrollY > hero.offsetHeight*0.55 && !atContact); }
+
+// Mobile menu
+var burger=document.getElementById('burger'), menu=document.getElementById('mmenu');
+menu.querySelectorAll('.mlinks li').forEach(function(li,i){ li.style.setProperty('--n',i); });
+function setMenu(open){ burger.setAttribute('aria-expanded',open); burger.setAttribute('aria-label',open?'Close menu':'Open menu'); menu.classList.toggle('open',open); menu.setAttribute('aria-hidden',!open); document.body.classList.toggle('menu-open',open); }
+burger.addEventListener('click',function(){ setMenu(burger.getAttribute('aria-expanded')!=='true'); });
+menu.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(){ setMenu(false); }); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') setMenu(false); });
+
+// Active section in desktop nav
+var links=[].slice.call(document.querySelectorAll('#navlinks a'));
+var targets=links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+var spy=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ var i=targets.indexOf(e.target); links.forEach(function(l,j){ l.classList.toggle('active', j===i); }); } }); },{rootMargin:'-40% 0px -55% 0px'});
+targets.forEach(function(t){ if(t) spy.observe(t); });
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+// Reveal + counters
+var io = new IntersectionObserver(function(es){
+es.forEach(function(e){
+if(!e.isIntersecting) return;
+e.target.classList.add('in-view');
+e.target.querySelectorAll('[data-count]').forEach(count);
+if(e.target.hasAttribute('data-count')) count(e.target);
+io.unobserve(e.target);
+});
+},{threshold:.18, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv, section').forEach(function(el){ io.observe(el); });
+
+function count(el){
+if(el.dataset.done) return; el.dataset.done=1;
+var to=+el.dataset.count, pre=el.dataset.prefix||'', t0=null, dur=1400;
+if(reduce){ el.textContent=pre+to.toLocaleString(); return; }
+function step(t){ if(!t0)t0=t; var p=Math.min(1,(t-t0)/dur); p=1-Math.pow(1-p,3);
+el.textContent=pre+Math.round(to*p).toLocaleString(); if(p<1) requestAnimationFrame(step); }
+requestAnimationFrame(step);
+}
+
+// Contact form: posts to Formspree, which emails John. Set FORM_ENDPOINT once the form ID exists.
+var FORM_ENDPOINT='https://formspree.io/f/FORM_ID';
+var form=document.getElementById('cform');
+if(form){
+form.addEventListener('submit',function(e){
+e.preventDefault();
+var f=new FormData(form), name=(f.get('name')||'').trim(), email=(f.get('email')||'').trim();
+var okEmail=/.+@.+\..+/.test(email), ok=name && okEmail;
+form.querySelector('[name=name]').classList.toggle('bad',!name);
+form.querySelector('[name=email]').classList.toggle('bad',!okEmail);
+var err=document.getElementById('ferr'); err.hidden=ok; err.textContent='Please add your name and a working email so John can reply.';
+if(!ok) return;
+var payload={
+_subject:'Website Contact Form: '+name,
+_replyto:email,
+Name:name, Company:f.get('company')||'', Email:email, Phone:f.get('phone')||'',
+'Project type':f.get('type'), 'Project stage':f.get('stage'), 'Approximate budget':f.get('budget'),
+'About the project':f.get('message')||''
+};
+var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.style.opacity=.7;
+function done(){ document.getElementById('fdone').hidden=false; }
+function fallback(){
+var body=Object.keys(payload).filter(function(k){return k[0]!=='_'}).map(function(k){return k+': '+payload[k]}).join('\n');
+window.location.href='mailto:john@jjgdevelopmentgroup.com?subject='+encodeURIComponent('Website Contact Form: '+name)+'&body='+encodeURIComponent(body);
+done();
+}
+if(FORM_ENDPOINT.indexOf('FORM_ID')>-1){ fallback(); return; }
+fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
+.then(function(r){ if(r.ok) done(); else throw new Error('bad'); })
+.catch(function(){ btn.disabled=false; btn.style.opacity=''; err.hidden=false; err.textContent='That did not go through. Please try again or call 631-258-8787.'; });
+});
+}
+
+// Schedule hover focus
+var tb=document.querySelector('.sched tbody'), sf=document.getElementById('schedFocus');
+if(tb&&sf){
+var sfV=document.getElementById('sfVal'), sfN=document.getElementById('sfName'), sfS=document.getElementById('sfScope');
+tb.querySelectorAll('tr').forEach(function(tr){
+tr.addEventListener('mouseenter',function(){
+tb.classList.add('hot'); tb.querySelectorAll('tr.on').forEach(function(r){r.classList.remove('on')}); tr.classList.add('on');
+var v=tr.querySelector('.val').textContent, n=tr.querySelector('.name').textContent, sc=tr.querySelector('.scope').textContent;
+sfV.classList.add('swap'); setTimeout(function(){ sfV.textContent=v; sfV.style.fontSize = v.length>6 ? '1.9rem' : ''; sfN.textContent=n; sfS.textContent=sc; sfV.classList.remove('swap'); },120);
+});
+});
+tb.addEventListener('mouseleave',function(){ tb.classList.remove('hot'); tb.querySelectorAll('tr.on').forEach(function(r){r.classList.remove('on')}); });
+}
+
+// Scroll plumb line: fills with progress, ticks mark each section
+var plumb=document.getElementById('plumb'), pf=document.getElementById('plumbFill'), pb=document.getElementById('plumbBob'), pt=document.getElementById('plumbTicks');
+function layTicks(){ pt.innerHTML=''; var doc=document.documentElement.scrollHeight-window.innerHeight; ['what','questions','services','how','work','why','serve','when','contact'].forEach(function(id){ var el=document.getElementById(id); if(!el) return; var y=Math.min(1,el.offsetTop/doc); var i=document.createElement('i'); i.style.top=(y*100)+'%'; pt.appendChild(i); }); }
+function plumbScroll(){ var doc=document.documentElement.scrollHeight-window.innerHeight; var p=Math.max(0,Math.min(1,window.scrollY/doc)); pf.style.height=(p*100)+'%'; pb.style.top=(p*100)+'%'; plumb.classList.toggle('on', window.scrollY>hero.offsetHeight*0.7); }
+layTicks(); plumbScroll(); window.addEventListener('scroll',plumbScroll,{passive:true}); window.addEventListener('resize',layTicks);
+
+// Marquee: duplicate content for a seamless loop
+var m=document.getElementById('marquee'); m.innerHTML += m.innerHTML;
+
+// Hero: drafting grid with a slow plumb line sweep
+var c=document.getElementById('grid'), ctx=c.getContext('2d'), W,H,dpr;
+function size(){ dpr=Math.min(2,window.devicePixelRatio||1); W=c.clientWidth; H=c.clientHeight; c.width=W*dpr; c.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+size(); window.addEventListener('resize',size);
+var t=0, t0=null, px_=0, py_=0, tx_=0, ty_=0;
+var fig=document.querySelector('.hero-fig');
+if(!reduce){ hero.addEventListener('pointermove',function(e){ var r=hero.getBoundingClientRect(); tx_=((e.clientX-r.left)/r.width-0.5); ty_=((e.clientY-r.top)/r.height-0.5); }); }
+function drawGrid(){
+if(t0===null) t0=t; var prog=reduce?1:Math.min(1,(t-t0)/1800); prog=1-Math.pow(1-prog,3);
+px_+= (tx_-px_)*0.06; py_+=(ty_-py_)*0.06; if(fig&&!reduce){ fig.style.transform='translate('+(px_*-14)+'px,'+(py_*-8)+'px)'; }
+ctx.clearRect(0,0,W,H);
+var s=56;
+ctx.strokeStyle='rgba(244,241,234,0.045)'; ctx.lineWidth=1;
+ctx.beginPath();
+var ox=px_*18, oy=py_*12;
+for(var x=0.5+ (ox%s);x<W;x+=s){ctx.moveTo(x,0);ctx.lineTo(x,H*prog);}
+for(var y=0.5+(oy%s);y<H;y+=s){ctx.moveTo(0,y);ctx.lineTo(W*prog,y);}
+ctx.stroke();
+// major lines
+ctx.strokeStyle='rgba(201,162,76,0.10)';
+ctx.beginPath();
+for(var x2=0.5+(ox%(s*4));x2<W;x2+=s*4){ctx.moveTo(x2,0);ctx.lineTo(x2,H*prog);}
+for(var y2=0.5+(oy%(s*4));y2<H;y2+=s*4){ctx.moveTo(0,y2);ctx.lineTo(W*prog,y2);}
+ctx.stroke();
+// tick marks along the top like a scale rule
+ctx.strokeStyle='rgba(201,162,76,0.35)';
+ctx.beginPath();
+for(var x3=0.5;x3<W;x3+=s/4){var len=((x3-0.5)%s<1)?14:((x3-0.5)%(s/2)<1?9:5); ctx.moveTo(x3,0); ctx.lineTo(x3,len);}
+ctx.stroke();
+// sweeping plumb line
+if(!reduce){
+var px = (Math.sin(t*0.00025)*0.5+0.5)*W;
+var g=ctx.createLinearGradient(px-120,0,px+120,0);
+g.addColorStop(0,'rgba(201,162,76,0)'); g.addColorStop(.5,'rgba(201,162,76,0.10)'); g.addColorStop(1,'rgba(201,162,76,0)');
+ctx.fillStyle=g; ctx.fillRect(px-120,0,240,H);
+ctx.strokeStyle='rgba(201,162,76,0.45)'; ctx.beginPath(); ctx.moveTo(px+0.5,0); ctx.lineTo(px+0.5,H); ctx.stroke();
+}
+// vignette
+var v=ctx.createRadialGradient(W*.5,H*.5,H*.2,W*.5,H*.5,Math.max(W,H)*.8);
+v.addColorStop(0,'rgba(10,26,40,0)'); v.addColorStop(1,'rgba(10,26,40,0.75)');
+ctx.fillStyle=v; ctx.fillRect(0,0,W,H);
+}
+function loop(ts){ t=ts; drawGrid(); if(!reduce) requestAnimationFrame(loop); }
+requestAnimationFrame(loop);
+
+// Who we serve: generative line-art elevations
+document.querySelectorAll('.skyline').forEach(function(cv){
+var k=cv.dataset.kind, x=cv.getContext('2d');
+function draw(){
+var d=Math.min(2,window.devicePixelRatio||1), w=cv.clientWidth, h=cv.clientHeight;
+cv.width=w*d; cv.height=h*d; x.setTransform(d,0,0,d,0,0); x.clearRect(0,0,w,h);
+x.lineWidth=1; x.strokeStyle = k==='commercial' ? 'rgba(201,162,76,0.16)' : 'rgba(19,49,78,0.16)';
+var base=h*0.52;
+// ground line
+x.beginPath(); x.moveTo(0,base+0.5); x.lineTo(w,base+0.5); x.stroke();
+var seed=k==='commercial'?7:3; function r(){ seed=(seed*9301+49297)%233280; return seed/233280; }
+if(k==='commercial'){
+var px=-20;
+while(px<w+40){
+var bw=60+r()*120, bh=h*(0.12+r()*0.34), top=base-bh;
+x.strokeRect(px+0.5,top+0.5,bw,bh);
+// curtain wall mullions
+x.beginPath();
+for(var i=bw/5;i<bw;i+=bw/5){x.moveTo(px+i+0.5,top);x.lineTo(px+i+0.5,base);}
+for(var j=18;j<bh;j+=18){x.moveTo(px,top+j+0.5);x.lineTo(px+bw,top+j+0.5);}
+x.stroke();
+// mechanical penthouse
+if(r()>0.5){x.strokeRect(px+bw*0.3+0.5,top-12+0.5,bw*0.4,12);}
+px+=bw+10+r()*30;
+}
+// crane
+var cx=w*0.72; x.beginPath(); x.moveTo(cx+0.5,base); x.lineTo(cx+0.5,base-h*0.5); x.moveTo(cx-90,base-h*0.47+0.5); x.lineTo(cx+140,base-h*0.47+0.5);
+for(var q=0;q<8;q++){x.moveTo(cx-90+q*28,base-h*0.47);x.lineTo(cx-76+q*28,base-h*0.44);x.lineTo(cx-62+q*28,base-h*0.47);}
+x.stroke();
+} else {
+// a long modern house: low horizontal volumes, big glass, flat roofs, pool line
+var hx=w*0.08, hw=w*0.84;
+x.strokeRect(hx+0.5,base-h*0.22+0.5,hw*0.45,h*0.22);
+x.strokeRect(hx+hw*0.42+0.5,base-h*0.34+0.5,hw*0.36,h*0.34);
+x.strokeRect(hx+hw*0.75+0.5,base-h*0.18+0.5,hw*0.25,h*0.18);
+// roof overhangs
+x.beginPath(); x.moveTo(hx-30,base-h*0.22+0.5); x.lineTo(hx+hw*0.48,base-h*0.22+0.5);
+x.moveTo(hx+hw*0.38,base-h*0.34+0.5); x.lineTo(hx+hw*0.82,base-h*0.34+0.5); x.stroke();
+// glass grid on the tall volume
+x.beginPath();
+for(var g=1;g<6;g++){var gx=hx+hw*0.42+(hw*0.36/6)*g; x.moveTo(gx+0.5,base-h*0.34); x.lineTo(gx+0.5,base);}
+for(var gy=base-h*0.34+h*0.085;gy<base;gy+=h*0.085){x.moveTo(hx+hw*0.42,gy+0.5);x.lineTo(hx+hw*0.78,gy+0.5);}
+// windows on low volumes
+for(var wv=0;wv<4;wv++){x.rect(hx+18+wv*(hw*0.45-36)/4+0.5, base-h*0.17+0.5, (hw*0.45-36)/4-10, h*0.12);}
+x.stroke();
+// pool + terrace
+x.beginPath(); x.moveTo(hx+hw*0.1,base+18.5); x.lineTo(hx+hw*0.9,base+18.5); x.stroke();
+// trees
+for(var tr=0;tr<2;tr++){var tx=tr?w*0.965:w*0.035; x.beginPath(); x.moveTo(tx+0.5,base); x.lineTo(tx+0.5,base-h*0.22); x.moveTo(tx+h*0.05,base-h*0.27); x.arc(tx,base-h*0.27,h*0.05,0,Math.PI*2); x.stroke();}
+}
+}
+draw(); window.addEventListener('resize',draw);
+});
+})();
+</script>
+
+</body>
+</html>

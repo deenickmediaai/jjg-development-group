@@ -27,10 +27,21 @@ deployed site.
 - **The contact form does not send.** `FORM_ENDPOINT` is still the placeholder
   `https://formspree.io/f/FORM_ID`. It falls back to opening the visitor's own mail
   client and shows a success message either way, so enquiries can be lost silently.
-  This is the most important thing to fix.
-- No privacy policy or terms page, though the form collects personal data.
-- No `og:image`, so shared links show no preview image.
-- No robots.txt, sitemap.xml, canonical URL or custom 404.
-- No analytics.
-- Page title is just "JJG Development Group", with no description of the service or location.
-- John's photo is an older picture and is due to be replaced.
+  This is the most important thing to fix, and it needs a real form service key.
+- No analytics, by choice so far. Adding any would mean revisiting the cookies
+  section of the privacy policy, which currently states plainly that the site sets
+  none.
+- John's photo is an older picture and is due to be replaced. When the new one
+  arrives, check its cut-out edge before use. The current one had a pale halo from
+  being cut off a light background, which had to be repaired.
+
+## Legal pages
+
+`privacy.html` and `terms.html` are built from the Dee Nick Media templates
+(DRAFT 12.19.24), with placeholders filled in and **clauses removed that do not
+apply to this site**: payment processing, email subscriptions, advertising and
+analytics cookies, and social media tracking. The site does none of those. The
+privacy policy states that no cookies are set, which is true today and must be
+revisited if analytics is ever added.
+
+Effective date on both is October 12, 2026. Neither has been reviewed by a lawyer.

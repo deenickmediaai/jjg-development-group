@@ -24,10 +24,26 @@ deployed site.
 
 ## Known work outstanding
 
-- **The contact form does not send.** `FORM_ENDPOINT` is still the placeholder
-  `https://formspree.io/f/FORM_ID`. It falls back to opening the visitor's own mail
-  client and shows a success message either way, so enquiries can be lost silently.
-  This is the most important thing to fix, and it needs a real form service key.
+- **The contact form needs one access key before it can send.** It posts to
+  Web3Forms (`https://api.web3forms.com/submit`). Get a free key at
+  https://web3forms.com by entering **john@jjgdevelopmentgroup.com** — no account or
+  password, the key is emailed to that address, and that is where enquiries land.
+  Paste it into `W3F_KEY` in `index.html`, then deploy.
+
+  Free tier is 250 submissions a month. The key is public by design and sits in the
+  page source; that is how the service works. Sending a copy to a second address
+  (`ccemail`) is a paid feature, so only the registering address gets enquiries.
+
+  Until the key is in, the form refuses to submit and tells the visitor to call
+  instead. **It no longer shows a thank-you it cannot stand behind** — the previous
+  version claimed success even when nothing was sent. Verified: a missing key, a
+  rejected key, and a dead network each show an error and re-enable the button.
+
+  This replaced an earlier Vercel serverless function that emailed via Resend.
+  Resend is free at this volume too, but it needed an account, a secret key stored
+  in Vercel's environment variables, and server code. Web3Forms needs none of that
+  and keeps the site fully static, so `api/contact.js` was deleted.
+
 - No analytics, by choice so far. Adding any would mean revisiting the cookies
   section of the privacy policy, which currently states plainly that the site sets
   none.

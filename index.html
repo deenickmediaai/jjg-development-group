@@ -929,6 +929,7 @@ footer{padding-bottom:110px}
 </div>
 </div>
 <form class="cform rv d2" id="cform" novalidate>
+<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
 <div class="f2">
 <label class="fld"><span>Name</span><input type="text" name="name" autocomplete="name" required></label>
 <label class="fld"><span>Company or organization</span><input type="text" name="company" autocomplete="organization"></label>
@@ -1016,8 +1017,11 @@ el.textContent=pre+Math.round(to*p).toLocaleString(); if(p<1) requestAnimationFr
 requestAnimationFrame(step);
 }
 
-// Contact form: posts to Formspree, which emails John. Set FORM_ENDPOINT once the form ID exists.
-var FORM_ENDPOINT='https://formspree.io/f/FORM_ID';
+// Contact form: posts straight to Web3Forms, which emails John.
+// The access key is public by design. Get one (free, no account) at https://web3forms.com
+// by entering john@jjgdevelopmentgroup.com. Enquiries go to whichever address made the key.
+var W3F_KEY='PASTE_WEB3FORMS_ACCESS_KEY_HERE';
+var FORM_ENDPOINT='https://api.web3forms.com/submit';
 var form=document.getElementById('cform');
 if(form){
 form.addEventListener('submit',function(e){
@@ -1028,24 +1032,24 @@ form.querySelector('[name=name]').classList.toggle('bad',!name);
 form.querySelector('[name=email]').classList.toggle('bad',!okEmail);
 var err=document.getElementById('ferr'); err.hidden=ok; err.textContent='Please add your name and a working email so John can reply.';
 if(!ok) return;
+var btn=form.querySelector('button[type=submit]');
+function fail(msg){ btn.disabled=false; btn.style.opacity=''; err.hidden=false; err.textContent=msg; }
+// Never show a thank-you we cannot stand behind: with no key, nothing can send.
+if(W3F_KEY.indexOf('PASTE_')===0){ fail('The form is not connected yet. Please call 631-258-8787 or email john@jjgdevelopmentgroup.com.'); return; }
 var payload={
-_subject:'Website Contact Form: '+name,
-_replyto:email,
-Name:name, Company:f.get('company')||'', Email:email, Phone:f.get('phone')||'',
-'Project type':f.get('type'), 'Project stage':f.get('stage'), 'Approximate budget':f.get('budget'),
-'About the project':f.get('message')||''
+access_key:W3F_KEY,
+subject:'Website enquiry: '+name+(f.get('company')?' ('+f.get('company')+')':''),
+from_name:'JJG Development Group website',
+botcheck:f.get('botcheck')?true:false,
+Name:name, Company:f.get('company')||'', email:email, Phone:f.get('phone')||'',
+'Project type':f.get('type')||'', 'Project stage':f.get('stage')||'',
+'Approximate budget':f.get('budget')||'', 'About the project':f.get('message')||''
 };
-var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.style.opacity=.7;
-function done(){ document.getElementById('fdone').hidden=false; }
-function fallback(){
-var body=Object.keys(payload).filter(function(k){return k[0]!=='_'}).map(function(k){return k+': '+payload[k]}).join('\n');
-window.location.href='mailto:john@jjgdevelopmentgroup.com?subject='+encodeURIComponent('Website Contact Form: '+name)+'&body='+encodeURIComponent(body);
-done();
-}
-if(FORM_ENDPOINT.indexOf('FORM_ID')>-1){ fallback(); return; }
+btn.disabled=true; btn.style.opacity=.7;
 fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
-.then(function(r){ if(r.ok) done(); else throw new Error('bad'); })
-.catch(function(){ btn.disabled=false; btn.style.opacity=''; err.hidden=false; err.textContent='That did not go through. Please try again or call 631-258-8787.'; });
+.then(function(r){ return r.json().catch(function(){ return {success:false}; }); })
+.then(function(j){ if(j && j.success){ document.getElementById('fdone').hidden=false; } else { throw new Error('rejected'); } })
+.catch(function(){ fail('That did not go through. Please try again or call 631-258-8787.'); });
 });
 }
 

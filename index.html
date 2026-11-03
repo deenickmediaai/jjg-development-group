@@ -507,6 +507,8 @@ section.qa .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6v
 .in-view .curve .line-i{animation:draw2 1.6s .5s ease forwards}
 @keyframes draw2{to{stroke-dashoffset:0}}
 .curve .zone{fill:rgba(201,162,76,.08)}
+.curve .key-c{stroke:var(--gold);stroke-width:1.6}
+.curve .key-i{stroke:#C7D3DF;stroke-width:1.2;opacity:.8}
 @media(max-width:900px){.when .wrap{grid-template-columns:1fr}}
 
 /* CTA */
@@ -896,7 +898,7 @@ footer{padding-bottom:110px}
 <p class="lede" style="color:#C7D3DF">The best time to engage an owner's representative is before the first shovel hits the ground, when the decisions that shape your budget and timeline are still on the table.</p>
 </div>
 <div class="rv d1">
-<svg class="curve" viewBox="0 0 560 330" role="img" aria-label="Chart: your ability to influence cost falls sharply as a project moves from planning to construction, while the cost of making a change rises. The window where an owner's rep protects you most is early.">
+<svg class="curve" viewBox="0 0 560 352" role="img" aria-label="Chart: your ability to influence cost falls sharply as a project moves from planning to construction, while the cost of making a change rises. The window where an owner's rep protects you most is early.">
 <rect class="zone" x="60" y="30" width="150" height="240"/>
         <text class="lbl" x="70" y="24">Most leverage</text>
 <line class="axis" x1="60" y1="270" x2="530" y2="270"/>
@@ -907,9 +909,11 @@ footer{padding-bottom:110px}
         <text x="200" y="292">Design</text>
         <text x="330" y="292">Bidding</text>
         <text x="450" y="292">Construction</text>
-        <text class="lbl" x="220" y="100" style="font-size:9px">Ability to influence cost</text>
-        <text x="330" y="170" style="font-size:9px;fill:#C7D3DF">Cost of making a change</text>
-        <text x="60" y="318" style="font-size:9px;opacity:.6">Illustrative, not to scale</text>
+        <line class="key-c" x1="60" y1="316" x2="78" y2="316"/>
+        <text x="86" y="319" style="font-size:9px">Ability to influence cost</text>
+        <line class="key-i" x1="286" y1="316" x2="304" y2="316"/>
+        <text x="312" y="319" style="font-size:9px;fill:#C7D3DF">Cost of making a change</text>
+        <text x="60" y="342" style="font-size:9px;opacity:.6">Illustrative, not to scale</text>
 </svg>
 <div class="lev rv d2"><div><b>Planning</b>Most leverage</div><div><b>Design</b>Choices still open</div><div><b>Construction</b>Changes cost most</div></div>
 </div>

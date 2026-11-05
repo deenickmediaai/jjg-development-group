@@ -245,17 +245,14 @@ section.in-view .secno{opacity:1;transform:none}
 .on-navy,.on-deep,.hero,.break{--mx:50%;--my:50%}
 .spot::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(520px 520px at var(--mx) var(--my),rgba(201,162,76,.09),transparent 60%);opacity:0;transition:opacity .6s}
 .spot:hover::after{opacity:1}
-/* Break section: tower under construction, scroll-driven */
-.break{position:relative;background:var(--navy-ink);color:var(--bone);padding:clamp(90px,12vw,160px) 0;overflow:hidden;isolation:isolate}
-.break canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+/* Break section: a pause between Services and Process; the type is the visual */
+.break{position:relative;background:var(--navy-ink);color:var(--bone);padding:clamp(120px,16vw,210px) 0;overflow:hidden;isolation:isolate}
 .break .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr;gap:44px;max-width:var(--max)}
-.break .eyebrow{margin-bottom:22px}
-.break h2{font-size:clamp(2.6rem,6vw,5.6rem);line-height:1;letter-spacing:-.01em;max-width:12ch}
+.break .eyebrow{margin-bottom:30px}
+.break .bk-rule{width:120px;height:2px;background:var(--gold);margin-top:clamp(34px,4vw,54px)}
+.break h2{font-size:clamp(3rem,8.4vw,7rem);line-height:.98;letter-spacing:-.015em;max-width:15ch}
 .break h2 em{font-style:normal;color:var(--gold-soft)}
-.break .bk-meta{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);display:flex;gap:44px;max-width:560px}
-.break .bk-meta b{display:block;font-size:clamp(2rem,3.4vw,3rem);color:var(--gold);font-weight:500;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
-.break .bk-meta span{display:block;padding-top:10px;margin-top:10px;border-top:1px solid rgba(201,162,76,.25)}
-@media(max-width:900px){.break .bk-meta{gap:28px}.break canvas{opacity:.38}.break h2{max-width:none}}
+@media(max-width:900px){.break h2{max-width:none}}
 /* Project strip */
 .strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(250px,1fr);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 18px;margin:0 0 34px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .strip::-webkit-scrollbar{display:none}
@@ -355,8 +352,7 @@ section.qa .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6v
 
 
 /* ===== Calm pass: numbers off ===== */
-.secno,.svc-cell .sn,.step .no,.why .why-item .wn,.card .idx,.qa .qa-pull,.break .bk-meta{display:none!important}
-.co::before{content:"";width:7px;height:7px;left:-4px;top:26px;border-radius:0;transform:rotate(45deg);background:var(--gold);border:0}
+.secno,.svc-cell .sn,.step .no,.why .why-item .wn,.card .idx,.qa .qa-pull,.co::before{content:"";width:7px;height:7px;left:-4px;top:26px;border-radius:0;transform:rotate(45deg);background:var(--gold);border:0}
 .break .wrap{gap:0}
 
 /* Stats */
@@ -673,7 +669,7 @@ footer{padding-bottom:110px}
 </div>
 <figure class="hero-fig rv a5" style="margin:0">
 <span class="panel"></span><span class="hl"></span><span class="rim"></span><span class="coord">Fig. 01<b>Principal, on site</b></span><span class="arc"></span><span class="arc two"></span><span class="arc three"></span><span class="arc fill"></span>
-<img src="headshot.webp" alt="John Guido, founder of JJG Development Group" width="791" height="1188">
+<img src="headshot.webp" alt="John Guido, founder of JJG Development Group" width="760" height="1125">
 <figcaption class="tag"><span>Principal</span>John Guido<br>42 years in the field</figcaption>
 </figure>
 </div>
@@ -775,12 +771,10 @@ footer{padding-bottom:110px}
 </div>
 </section>
 
-<!-- BREAK: tower under construction -->
+<!-- BREAK: statement band, no graphic -->
 <section class="break spot" id="break" aria-label="Owner's advocate">
-<canvas id="tower" aria-hidden="true"></canvas>
 <div class="wrap">
-<div class="rv"><p class="eyebrow">On your side of the table</p><h2>An owner's rep answers <em>only to you.</em></h2></div>
-<div class="bk-meta rv d1"><div><b id="twPct">00</b><span>of 14 floors raised</span></div><div><b>1</b><span>point of contact</span></div></div>
+<div class="rv"><p class="eyebrow">On your side of the table</p><h2>An owner's rep answers <em>only to you.</em></h2><div class="bk-rule"></div></div>
 </div>
 </section>
 
@@ -1192,23 +1186,7 @@ var d=document.createElement('div'); d.className='card'; d.innerHTML='<span clas
 var steps=document.querySelector('.steps'), prog=document.getElementById('prog');
 function progScroll(){ if(!steps||!prog) return; var r=steps.getBoundingClientRect(); var vh=window.innerHeight; var p=Math.max(0,Math.min(1,(vh*0.85-r.top)/(r.height+vh*0.3))); if(window.innerWidth>900){ prog.style.width=(p*100)+'%'; } else { prog.style.height=(p*100)+'%'; } }
 window.addEventListener('scroll',progScroll,{passive:true}); window.addEventListener('resize',progScroll); progScroll();
-var tw=document.getElementById('tower'), brk=document.getElementById('break'), pct=document.getElementById('twPct');
-if(tw&&brk){ var tx=tw.getContext('2d'), W=0,H=0,dpr=1, prog2=0, reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-function tsize(){ dpr=Math.min(2,window.devicePixelRatio||1); W=tw.clientWidth; H=tw.clientHeight; tw.width=W*dpr; tw.height=H*dpr; tx.setTransform(dpr,0,0,dpr,0,0); }
-function tdraw(t){ tx.clearRect(0,0,W,H); var floors=14, base=H*0.96, right=W>900?W*0.94:W*0.98, tw_=W>900?Math.min(W*0.3,380):W*0.4, left=right-tw_, fh=(H*0.78)/floors, top=base-fh*floors;
- tx.strokeStyle='rgba(201,162,76,.25)'; tx.lineWidth=1; tx.beginPath(); tx.moveTo(0,base+.5); tx.lineTo(W,base+.5); tx.stroke();
- tx.strokeStyle='rgba(201,162,76,.14)'; tx.strokeRect(left+.5,top+.5,tw_,fh*floors);
- for(var f=1;f<floors;f++){ tx.beginPath(); tx.moveTo(left,top+f*fh+.5); tx.lineTo(right,top+f*fh+.5); tx.stroke(); }
- var built=prog2*floors; var full=Math.floor(built), part=built-full;
- for(var i=0;i<floors;i++){ var y=base-(i+1)*fh; var a = i<full?1:(i===full?part:0); if(a<=0) continue; tx.globalAlpha=a; tx.strokeStyle='rgba(201,162,76,.75)'; tx.strokeRect(left+.5,y+.5,tw_,fh);
-   tx.beginPath(); var cols=7; for(var c=1;c<cols;c++){ tx.moveTo(left+c*tw_/cols+.5,y); tx.lineTo(left+c*tw_/cols+.5,y+fh); } tx.strokeStyle='rgba(201,162,76,.35)'; tx.stroke();
-   tx.fillStyle='rgba(201,162,76,.05)'; tx.fillRect(left,y,tw_,fh); tx.globalAlpha=1; }
- var cx=left-Math.min(90,W*0.08), ch=fh*floors+60, boomY=base-ch; tx.strokeStyle='rgba(201,162,76,.55)'; tx.beginPath(); tx.moveTo(cx+.5,base); tx.lineTo(cx+.5,boomY); tx.moveTo(cx-40,boomY+.5); tx.lineTo(cx+tw_*0.9,boomY+.5); for(var q=0;q<Math.floor(ch/26);q++){ tx.moveTo(cx-6,base-q*26); tx.lineTo(cx+6,base-q*26-13); } tx.stroke();
- var hx=cx+40+ (tw_*0.8)*(0.25+0.5*(0.5+0.5*Math.sin(t/1800))), hy=boomY+ (prog2<1? (base-built*fh-boomY)-30 : 40); tx.beginPath(); tx.moveTo(hx+.5,boomY); tx.lineTo(hx+.5,hy); tx.stroke(); tx.fillStyle='rgba(201,162,76,.9)'; tx.fillRect(hx-8,hy,16,10);
- tx.fillStyle='rgba(143,163,184,.8)'; tx.font='500 10px IBM Plex Mono, monospace'; tx.textAlign='left'; tx.fillText('FLOOR '+String(Math.min(floors,Math.ceil(built))).padStart(2,'0')+' / '+floors, left, top-14); }
-function tscroll(){ var r=brk.getBoundingClientRect(), vh=window.innerHeight; prog2=Math.max(0,Math.min(1,(vh-r.top)/(r.height+vh*0.2))); if(pct) pct.textContent=String(Math.round(prog2*14)).padStart(2,'0'); }
-function tloop(ts){ tdraw(ts||0); if(!reduce) requestAnimationFrame(tloop); }
-tsize(); tscroll(); window.addEventListener('resize',function(){tsize();tscroll();}); window.addEventListener('scroll',tscroll,{passive:true}); requestAnimationFrame(tloop); }
+
 })();
 
 (function(){

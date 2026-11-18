@@ -19,7 +19,9 @@ deployed site.
 ## Files
 
 - `index.html` — the whole site, styles and scripts inline
-- `headshot.webp` — John Guido, cut out, transparent background
+- `john-guido-2026.webp` — John Guido, cut out, transparent background.
+  Named with a year because browsers cache images by filename. When the photo
+  is replaced, give the new file a new name or people keep seeing the old one.
 - `favicon.svg`
 
 ## Known work outstanding
